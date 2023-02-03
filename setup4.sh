@@ -11,7 +11,7 @@ pip install dulwich
 pip install requests
 pip install datetime
 git clone https://github.com/raminsamadi123/hyprinstall $HOME/Downloads/hyprinstall/
-cd $HOME/Downloads/hyprland-dots/
+cd $HOME/Downloads/hyprinstall/
 rsync -avxHAXP --exclude '.git*' .* ~/
 mkdir -p $HOME/Downloads/nerdfonts/
 cd $HOME/Downloads/
