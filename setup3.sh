@@ -4,7 +4,7 @@ pip install clang-tidy
 pip install dulwich
 pip install requests
 pip install datetime
-git clone https://github.com/linuxmobile/hyprland-dots $HOME/Downloads/hyprland-dots/
+git clone https://github.com/raminsamadi123/hyprinstall $HOME/Downloads/hyprinstall/
 cd $HOME/Downloads/hyprland-dots/
 rsync -avxHAXP --exclude '.git*' .* ~/
 mkdir -p $HOME/Downloads/nerdfonts/
