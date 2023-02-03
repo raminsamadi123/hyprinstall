@@ -1,4 +1,4 @@
-#!/bin/bash
+!/bin/bash
 sudo pacman -Syu base-devel git python-pip
 sudo pacman -Rns waybar
 git clone https://aur.archlinux.org/yay-bin
