@@ -15,5 +15,5 @@ rm -rf *.zip
 sudo cp -R $HOME/Downloads/nerdfonts/ /usr/share/fonts/
 fc-cache -rv
 sudo systemctl enable sddm
-sudo sh -c "echo '[Autologin]\nUser=$USER\nSession=hyprland' > /etc/sddm.conf"
+sudo sh -c "echo -e '[Autologin]\nUser=$USER\nSession=hyprland' > /etc/sddm.conf"
 systemctl start sddm
