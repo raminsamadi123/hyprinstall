@@ -1,4 +1,4 @@
-https://drive.google.com/file/d/1uD2MDfF9VxjnvK6GLfFBxljHgC2TazWP/view?usp=sharing
+[!img]https://drive.google.com/file/d/1uD2MDfF9VxjnvK6GLfFBxljHgC2TazWP/view?usp=sharing
 # Setup
 install sway desktop with archinstall (Network Manager)
 ```
