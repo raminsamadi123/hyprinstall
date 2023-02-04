@@ -1,6 +1,6 @@
 # Setup
 ```
-If you know about Arch Linux & archinstall you can skip this step and move on to [PREPARATION], note that as desktop you must use sway:
+If you know about Arch Linux & archinstall you can skip this step, note that as desktop you must use sway:
 https://www.youtube.com/watch?v=G-mLyrHonvU&t=367s
 ```
 
