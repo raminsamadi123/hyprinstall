@@ -1,4 +1,4 @@
-[!img]https://drive.google.com/file/d/1uD2MDfF9VxjnvK6GLfFBxljHgC2TazWP/view?usp=sharing
+[![easy-arch-linux-rice-by-linuxmobile.png](https://i.postimg.cc/3N509sYv/easy-arch-linux-rice-by-linuxmobile.png)](https://postimg.cc/wy2Bjbtq)
 # Setup
 install sway desktop with archinstall (Network Manager)
 ```
