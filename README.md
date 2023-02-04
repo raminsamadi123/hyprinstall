@@ -15,7 +15,7 @@ cd paru
 makepkg -si
 ```
 
-## Run hyprinstall
+## Run hyprinstall !!DO THIS AS USER NOT ROOT!!
 	
 ```sh
 cd && git clone https://github.com/raminsamadi123/hyprinstall
