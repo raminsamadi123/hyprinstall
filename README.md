@@ -1,5 +1,5 @@
 # Setup
-install sway desktop with archinstall
+install sway desktop with archinstall (Network Manager)
 ```
 If you know about Arch Linux & archinstall you can skip this step, note that as desktop you must use sway:
 https://youtu.be/G-mLyrHonvU
