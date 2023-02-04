@@ -14,7 +14,7 @@ git clone https://aur.archlinux.org/paru.git
 cd paru/
 makepkg -si
 ```
-## Run hyprinstall !!DO THIS AS USER NOT ROOT!!
+## Run hyprinstall !!DO THIS AS USER NOT ROOT!! (During xdg-desktop-portal pick xdg-desktop-portal-wlr)
 	
 ```sh
 cd && git clone https://github.com/raminsamadi123/hyprinstall
