@@ -1,86 +1,70 @@
-* **Window Manager** • [Hyprland ](https://github.com/hyprwm/Hyprland)🎨 Tiles Everywhere!
-* **Shell** • [Zsh ](https://www.zsh.org) 🐚 con [starship](https://github.com/starship/starship) Cross Shell Platform!
-* **Terminal** • [WezTerm ](https://github.com/wez/wezterm) 💻 A powerful term with gpu support!
-* **Panel** • [Waybar ](https://aur.archlinux.org/packages/waybar-hyprland-git)🍧 Patched waybar following hyprland faq!
-* **Notify Daemon** • [Dunst ](https://github.com/dunst-project/dunst) 🍃 Minimalist and functional!
-* **Launcher** • [Rofi ](https://github.com/davatorium/rofi) 🚀 Realmente rápido y customizable!
-* **File Manager** • [Ranger ](https://github.com/ranger/ranger)🔖 custom!
-* **GUI Basic-IDE** • [Nyoom ](https://github.com/nyoom-engineering/nyoom.nvim) Rice IDE!
+[![easy-arch-linux-rice-by-linuxmobile.png](https://i.postimg.cc/3N509sYv/easy-arch-linux-rice-by-linuxmobile.png)](https://postimg.cc/wy2Bjbtq)
+## Setup
 
-## 🌸 Setup
+### This projected was created to make Arch Linux ricing easier for people who don't have much time or for people who don't want to do a lot of scripting. It's simple, lightweight (Runs on 400MB idle on my pc from 2015) and beutiful. Special thanks to [linuxmobile](https://github.com/linuxmobile) and [ChrisTitusTech](https://github.com/christitustech)
 
-<img src="https://i.imgur.com/SRK60r1.png">
+install Sway desktop with archinstall (NetworkManager) if problems occur try removing your disk with fdisk and then reboot or you might use pacman-key --init. If you know about Arch Linux & archinstall you can skip this step, note that as desktop you must use sway with pipewire:
+https://youtu.be/G-mLyrHonvU
 
-### Install steps (Take care about it. Isn't a full tutorial)
-<details>
-
-[Read Spanish Detailed Guide Here](https://aprendiendoaprogramar.netlify.app/configurando-hyprland-y-wayland/)
-
-<summary><b>LONG READ</b></summary>
-
-### Installation (Paq and deps)
-
-    First of all, this is a cute disclaimer. All of this settings are installed in Artix and in wayland only! I don't know how it work in other distro.
-
-#### Using paru as AUR helper 🆘
-
-```sh
-# install paru... 
-mkdir $HOME/Downloads/_cloned-repos
-cd $HOME/Downloads/_cloned-repos
-git clone https://aur.archlinux.org/paru.git
-cd paru
-makepkg -si  
-```
-
-#### Installing needed dependencies 📦
+## Run hyprinstall !!DO THIS AS USER NOT ROOT!! (During xdg-desktop-portal pick xdg-desktop-portal-wlr)
 	
 ```sh
-paru -S hyprland-git polkit-kde-agent dunst grimblast rofi rofi-emoji       \
-wl-clipboard wf-recorder wlogout grimblast-git hyprpicker-git hyprpaper-git \
-xdg-desktop-portal-hyprland-git ffmpegthumbnailer tumbler wtype colord      \
-imagemagick swaylock-effects qt5-wayland qt6-wayland ripgrep waybar-hyprland-git
+sudo pacman -Syu git
+cd && git clone https://github.com/raminsamadi123/hyprinstall
+cd hyprinstall/
+./hyprinstall.sh
 ```
 
-**Extras*
+<details>
+
+<summary><b>How to Change Keyboard Layout</b></summary>
+
+#### Install Vim or any editor of your choice
 ```sh
-# themes
-paru -S catppuccin-gtk-theme-mocha catppuccin-cursors-mocha catppuccin-mocha-grub-theme-git nwg-look
-
-# apps
-paru -S cava pavucontrol ranger zsh starship neovim viewnior noise-suppression-for-voice
+sudo pacman -Syu vim
 ```
-
-**If you want a Graphical file-manager*
+#### Find out what your X11 layout is
 ```sh
-thunar thunar-archive-plugin file-roller   
+localectl
+localectl list-x11-keymap-layouts
 ```
-
-
-##### Clone Repo
-
-```sh 
-git clone https://github.com/linuxmobile/hyprland-dots $HOME/Downloads/hyprland-dots/
-cd $HOME/Downloads/hyprland-dots/
-rsync -avxHAXP --exclude '.git*' .* ~/
-```
-
-#### As fonts i'm using **Cartograph CF** (patched with nerdfont) It's a licensed font, then select any font you like :3
+#### Edit Hyprland Configuration file
 ```sh
-mkdir -p $HOME/Downloads/nerdfonts/
-cd $HOME/Downloads/
-wget https://github.com/ryanoasis/nerd-fonts/releases/download/v2.3.1/CascadiaCode.zip
-unzip '*.zip' -d $HOME/Downloads/nerdfonts/
-rm -rf *.zip
-sudo cp -R $HOME/Downloads/nerdfonts/ /usr/share/fonts/
+sudo vim ~/.config/hypr/hyprland.conf
+```
+#### Uncomment these lines under EXEC and INPUT and change it to your x11 layout
+Under EXEC:
+```sh
+#exec-once = echo us > /tmp/kb_layout
+```
+Under INPUT:
+```sh
+#kb_layout = us
 ```
 
-##### Regenerate font cache
-```sh 
-fc-cache -rv  
-```
-### As gtk theme i'm using [Catppuccin](https://github.com/catppuccin/catppuccin)
+</details>
 
+<details>
+
+<summary><b>How to Change Wallpaper</b></summary>
+	
+#### Install Vim or any editor of your choice
+```sh
+sudo pacman -Syu vim
+```
+#### Find out your monitor's name in terminal
+It should look something like ***DP-1*** or ***HDMI-A-1***
+```sh
+hyprctl monitors
+```
+#### Edit the hyprpapper.conf in terminal
+```sh
+sudo vim ~/.config/hypr/hyprpaper.conf
+```
+
+	
+</details>
+	
 ## Credits
 
 _Beauty community: [r/unixporn](https://www.reddit.com/r/unixporn)._
@@ -98,3 +82,5 @@ _Beauty community: [r/unixporn](https://www.reddit.com/r/unixporn)._
 © [NvChad](https://github.com/NvChad) 
 © [Rxyhn](https://github.com/rxyhn)
 © [AmitGold](https://github.com/AmitGolden)
+© [linuxmobile](https://github.com/linuxmobile)
+© [ChrisTitusTech](https://github.com/ChrisTitusTech)
