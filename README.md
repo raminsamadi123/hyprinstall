@@ -12,7 +12,7 @@ To get started head over to:
 9. press d and delete all of your partitions
 10. When you are done press w and hit enter
 11. write reboot
-12. Get into your USB again go back to step 5 if you forgot
+12. Get into your USB again go back to step 5 if you forgot how to enter UEFI
 13. 
 ```
 
