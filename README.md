@@ -5,7 +5,7 @@ If you know about Arch Linux & archinstall you can skip this step, note that as 
 https://youtu.be/G-mLyrHonvU
 ```
 
-## Preparation
+## Preparation !!DO THIS AS USER NOT ROOT!!
 ```sh
 sudo pacman -Syu base-devel git python-pip unzip rsync bash-completion fish sddm
 mkdir Downloads && cd Downloads/
