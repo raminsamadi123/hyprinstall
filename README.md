@@ -1,4 +1,4 @@
-![image](https://user-images.githubusercontent.com/112062741/216787433-4fea79c0-3978-4d45-b6df-3c6039ff27b5.png)
+https://drive.google.com/file/d/1uD2MDfF9VxjnvK6GLfFBxljHgC2TazWP/view?usp=sharing
 # Setup
 install sway desktop with archinstall (Network Manager)
 ```
