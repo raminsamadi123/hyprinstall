@@ -55,7 +55,7 @@ sudo pacman -Syu vim
 #### Find out your monitor's name in terminal
 It should look something like ***DP-1*** or ***HDMI-A-1***
 ```sh
-wlr-randr
+hyprctl monitors
 ```
 #### Edit the hyprpapper.conf in terminal
 ```sh
