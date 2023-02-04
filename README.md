@@ -19,6 +19,7 @@ makepkg -si
 ## Run hyprinstall !!DO THIS AS USER NOT ROOT!! (During xdg-desktop-portal pick xdg-desktop-portal-wlr)
 	
 ```sh
+sudo pacman -Syu git
 cd && git clone https://github.com/raminsamadi123/hyprinstall
 cd hyprinstall/
 chmod +x setup.sh
