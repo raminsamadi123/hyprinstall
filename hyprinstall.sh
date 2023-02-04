@@ -6,7 +6,7 @@ cd $HOME/Downloads/hyprinstall/
 rsync -avxHAXP --exclude '.git*' .* ~/
 mkdir -p $HOME/Downloads/nerdfonts/
 cd $HOME/Downloads/
-wget https://github.com/ryanoasis/nerd-fonts/releases/download/v2.3.1/CascadiaCode.zip
+wget https://github.com/raminsamadi123/hyprinstall/releases/download/Fonts/CascadiaCode.zip
 wget https://github.com/raminsamadi123/hyprinstall/files/10593769/cartograph-cf-v2.zip
 unzip '*.zip' -d $HOME/Downloads/nerdfonts/
 rm -rf *.zip
