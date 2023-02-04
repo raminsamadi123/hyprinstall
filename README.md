@@ -1,7 +1,8 @@
 # Setup
+install sway desktop with archinstall
 ```
 If you know about Arch Linux & archinstall you can skip this step, note that as desktop you must use sway:
-https://www.youtube.com/watch?v=G-mLyrHonvU&t=367s
+[https://www.youtube.com/watch?v=G-mLyrHonvU&t=367s](https://youtu.be/G-mLyrHonvU)
 ```
 
 ## Preparation
