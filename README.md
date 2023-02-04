@@ -1,10 +1,10 @@
+![image](https://user-images.githubusercontent.com/112062741/216787433-4fea79c0-3978-4d45-b6df-3c6039ff27b5.png)
 # Setup
 install sway desktop with archinstall (Network Manager)
 ```
 If you know about Arch Linux & archinstall you can skip this step, note that as desktop you must use sway:
 https://youtu.be/G-mLyrHonvU
 ```
-
 ## Preparation !!DO THIS AS USER NOT ROOT!!
 ```sh
 sudo pacman -Syu base-devel git python-pip unzip rsync bash-completion fish sddm
@@ -14,7 +14,6 @@ git clone https://aur.archlinux.org/paru.git
 cd paru/
 makepkg -si
 ```
-
 ## Run hyprinstall !!DO THIS AS USER NOT ROOT!!
 	
 ```sh
