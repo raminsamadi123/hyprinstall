@@ -1,6 +1,6 @@
 # Setup
 ```
-To get started follow this tutorial note that as desktop you must use sway:
+If you don't know anything about Arch Linux here is a great video else you can skip this step and move on to [PREPARATION], note that as desktop you must use sway:
 https://www.youtube.com/watch?v=G-mLyrHonvU&t=367s
 ```
 
