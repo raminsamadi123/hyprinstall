@@ -1,4 +1,4 @@
-## Setup
+# Setup
 ```
 To get started head over to:
 1. https://arch.linux.org/downloads
@@ -26,7 +26,7 @@ cd paru
 makepkg -si
 ```
 
-#### Run hyprinstall
+## Run hyprinstall
 	
 ```sh
 cd && git clone https://github.com/raminsamadi123/hyprinstall
