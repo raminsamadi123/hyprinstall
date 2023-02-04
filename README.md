@@ -38,13 +38,15 @@ localectl list-x11-keymap-layouts
 ```sh
 sudo vim ~/.config/hypr/hyprland.conf
 ```
-#### Uncomment these lines under EXEC and Input and change it to your x11 layout
-# █▀▀ ▀▄▀ █▀▀ █▀▀
-# ██▄ █░█ ██▄ █▄▄
+#### Uncomment these lines under EXEC and INPUT and change it to your x11 layout
+Under EXEC:
+```sh
 #exec-once = echo us > /tmp/kb_layout
+```
+Under INPUT:
+```sh
 #kb_layout = us
-
-
+```
 ### How to Change Wallpaper
 #### Install Vim or any editor of your choice
 ```sh
