@@ -1,6 +1,6 @@
 # Setup
 ```
-To get started follow this tutorial note that as desktop you must use **sway**:
+To get started follow this tutorial note that as desktop you must use sway:
 https://www.youtube.com/watch?v=G-mLyrHonvU&t=367s
 ```
 
