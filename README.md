@@ -2,7 +2,7 @@
 This projected was created to make Arch Linux ricing easier for people who don't have much time or for people who don't want to do a lot of scripting. It's simple, lightweight (Runs on 400MB on idle on my pc from 2015) and beutiful.
 
 # Setup
-install Sway desktop with archinstall (NetworkManager)
+install Sway desktop with archinstall (NetworkManager) if problems occur try removing your disk with fdisk and then reboot or you might use pacman-key --init
 ```
 If you know about Arch Linux & archinstall you can skip this step, note that as desktop you must use sway:
 https://youtu.be/G-mLyrHonvU
