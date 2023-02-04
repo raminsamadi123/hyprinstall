@@ -12,6 +12,7 @@ unzip '*.zip' -d $HOME/Downloads/nerdfonts/
 rm -rf *.zip
 sudo cp -R $HOME/Downloads/nerdfonts/ /usr/share/fonts/
 fc-cache -rv
+chmod +x ~/.config/waybar/scripts/waybar-wttr.py
 sudo systemctl enable sddm
 sudo sh -c "echo -e '[Autologin]\nUser=$USER\nSession=hyprland' > /etc/sddm.conf"
 systemctl start sddm
