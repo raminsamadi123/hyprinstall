@@ -71,7 +71,7 @@ _Beauty community: [r/unixporn](https://www.reddit.com/r/unixporn)._
 
 **©** _Artist who make Wallpapers, graphics and more_
 
-**©** _All of mantainers of this amazing and opensource tools :3_
+**©** _All of mantainers of this amazing and opensource tools_
 
 ---
 
