@@ -23,7 +23,7 @@ _Beauty community: [r/unixporn](https://www.reddit.com/r/unixporn)._
 
 **©** _Artist who make Wallpapers, graphics and more_
 
-**©** _All of mantainers of this amazing and opensource tools :3_
+**©** _All of mantainers of this amazing and opensource tools_
 
 ---
 
@@ -34,3 +34,5 @@ _Beauty community: [r/unixporn](https://www.reddit.com/r/unixporn)._
 © [NvChad](https://github.com/NvChad) 
 © [Rxyhn](https://github.com/rxyhn)
 © [AmitGold](https://github.com/AmitGolden)
+© [linuxmobile](https://github.com/linuxmobile)
+© [ChrisTitusTech](https://github.com/ChrisTitusTech)
