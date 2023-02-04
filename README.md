@@ -11,7 +11,7 @@ sudo pacman -Syu base-devel git python-pip unzip rsync bash-completion fish sddm
 mkdir Downloads && cd Downloads/
 mkdir _cloned-repos && cd _cloned-repos
 git clone https://aur.archlinux.org/paru.git
-cd paru
+cd paru/
 makepkg -si
 ```
 
@@ -19,7 +19,7 @@ makepkg -si
 	
 ```sh
 cd && git clone https://github.com/raminsamadi123/hyprinstall
-cd hyprinstall
+cd hyprinstall/
 chmod +x ./hyprinstall.sh
 ./hyprinstall.sh
 ```
