@@ -7,15 +7,6 @@ install Sway desktop with archinstall (NetworkManager) if problems occur try rem
 If you know about Arch Linux & archinstall you can skip this step, note that as desktop you must use sway with pipewire:
 https://youtu.be/G-mLyrHonvU
 ```
-## Preparation !!DO THIS AS USER NOT ROOT!!
-```sh
-sudo pacman -Syu base-devel git python-pip unzip rsync bash-completion fish sddm
-mkdir Downloads && cd Downloads/
-mkdir _cloned-repos && cd _cloned-repos
-git clone https://aur.archlinux.org/paru.git
-cd paru/
-makepkg -si
-```
 ## Run hyprinstall !!DO THIS AS USER NOT ROOT!! (During xdg-desktop-portal pick xdg-desktop-portal-wlr)
 	
 ```sh
