@@ -1,19 +1,7 @@
 # Setup
 ```
-To get started head over to:
-1. https://arch.linux.org/downloads
-2. Install the Arch ISO file closest to you
-3. Flash the ISO to a USB flash drive using Balena Etcher https://www.balena.io/etcher
-4. Put the USB flash drive in your computer's USB port
-5. Access your computers UEFI by searching on Google "[ComputerModel] bios key", example: "[HP] bios key"
-6. Select your bootable USB flash drive
-7. write lsblk
-8. fdisk /dev/sda
-9. press d and delete all of your partitions
-10. When you are done press w and hit enter
-11. write reboot
-12. Get into your USB again go back to step 5 if you forgot how to enter UEFI
-13. 
+To get started follow this tutorial note that as desktop you must use **sway**:
+https://www.youtube.com/watch?v=G-mLyrHonvU&t=367s
 ```
 
 ## Preparation
