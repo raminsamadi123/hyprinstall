@@ -8,30 +8,12 @@
 * **GUI Basic-IDE** • [Nyoom ](https://github.com/nyoom-engineering/nyoom.nvim) Rice IDE!
 
 ## 🌸 Setup
-
-<img src="https://i.imgur.com/SRK60r1.png">
-
-### Install steps (Take care about it. Isn't a full tutorial)
-<details>
-
-[Read Spanish Detailed Guide Here](https://aprendiendoaprogramar.netlify.app/configurando-hyprland-y-wayland/)
-
-<summary><b>LONG READ</b></summary>
-
-### Installation (Paq and deps)
-
-    First of all, this is a cute disclaimer. All of this settings are installed in Artix and in wayland only! I don't know how it work in other distro.
-
-#### Using paru as AUR helper 🆘
-
-```sh
-# install paru... 
-mkdir $HOME/Downloads/_cloned-repos
-cd $HOME/Downloads/_cloned-repos
+pacman -Syu base-devel git python-pip unzip rsync bash-completion fish
+mkdir Downloads && cd Downloads/
+mkdir _cloned-repos && cd _cloned-repos
 git clone https://aur.archlinux.org/paru.git
 cd paru
-makepkg -si  
-```
+makepkg -si
 
 #### Installing needed dependencies 📦
 	
