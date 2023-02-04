@@ -24,6 +24,42 @@ chmod +x ./hyprinstall.sh
 ./hyprinstall.sh
 ```
 
+### How to Change Keyboard Layout
+#### Install Vim or any editor of your choice
+```sh
+sudo pacman -Syu vim
+```
+#### Find out what your X11 layout is
+```sh
+localectl
+localectl list-x11-keymap-layouts
+```
+#### Edit Hyprland Configuration file
+```sh
+sudo vim ~/.config/hypr/hyprland.conf
+```
+#### Uncomment these lines under EXEC and Input and change it to your x11 layout
+# █▀▀ ▀▄▀ █▀▀ █▀▀
+# ██▄ █░█ ██▄ █▄▄
+#exec-once = echo us > /tmp/kb_layout
+#kb_layout = us
+
+
+### How to Change Wallpaper
+#### Install Vim or any editor of your choice
+```sh
+sudo pacman -Syu vim
+```
+#### Find out your monitor's name in terminal
+It should look something like ***DP-1*** or ***HDMI-A-1***
+```sh
+wlr-randr
+```
+#### Edit the hyprpapper.conf in terminal
+```sh
+sudo vim ~/.config/hypr/hyprpaper.conf
+```
+
 ## Credits
 
 This is all thanks open source I got this from Chris Titus Tech after watching his long live stream but it was for sure worth it and I learnt a lot. Thanks to everyone contributing to this project.
