@@ -21,6 +21,8 @@ makepkg -si
 ```sh
 cd && git clone https://github.com/raminsamadi123/hyprinstall
 cd hyprinstall/
+chmod +x setup.sh
+./setup.sh
 chmod +x hyprinstall.sh
 ./hyprinstall.sh
 ```
