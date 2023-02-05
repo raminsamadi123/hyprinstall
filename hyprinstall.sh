@@ -65,7 +65,7 @@ if [[ "$graphics" =~ ^[yY][eE][sS]$ ]]; then
     sudo sh -c "echo -e '[Autologin]\nUser=$USER\nSession=hyprland' > /etc/sddm.conf"
     systemctl start sddm
 elif [[ "$graphics" =~ ^[nN][oO]$ ]]; then
-    sudo pacman -Syu base-devel git python-pip unzip rsync bash-completion fish sddm
+    sudo pacman -Syu base-devel git python-pip unzip rsync intel-ucode amd-ucode bash-completion fish sddm
     mkdir Downloads && cd Downloads/
     mkdir _cloned-repos && cd _cloned-repos
     git clone https://aur.archlinux.org/paru.git
