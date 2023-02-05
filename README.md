@@ -64,7 +64,30 @@ hyprctl monitors
 sudo vim ~/.config/hypr/hyprpaper.conf
 ```
 
+</details>
+
+</details>
+
+<details>
+
+<summary><b>How to fix no cursor or dissapearing cursor on NVIDIA install</b></summary>
 	
+#### Open your terminal and run the command below
+```sh
+echo "
+    export LIBVA_DRIVER_NAME=nvidia
+    export XDG_SESSION_TYPE=wayland
+    export GBM_BACKEND=nvidia-drm
+    export __GLX_VENDOR_LIBRARY_NAME=nvidia
+    export WLR_NO_HARDWARE_CURSORS=1
+    export CURSOR_INACTIVE_TIMEOUT=0
+    " >> ~/.bashrc && source ~/.bashrc
+```
+#### Reboot
+```sh
+reboot
+```
+
 </details>
 	
 ## Credits
