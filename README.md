@@ -7,8 +7,7 @@ install Sway desktop with archinstall (NetworkManager) if problems occur try rem
 https://youtu.be/G-mLyrHonvU
 
 ## Run hyprinstall !!DO THIS AS USER NOT ROOT!! 
-During xdg-desktop-portal pick xdg-desktop-portal-wlr
-If you have a NVIDIA GPU you should type yes when running the script
+During xdg-desktop-portal pick xdg-desktop-portal-wlr. If you have a NVIDIA GPU you should type yes when running the script, if not type no. Remeber to check the dropdown menus below if any problems occur
 ```sh
 sudo pacman -Syu git
 cd && git clone https://github.com/raminsamadi123/hyprinstall
