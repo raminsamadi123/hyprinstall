@@ -3,7 +3,7 @@ echo "Do you use NVIDIA graphics card? (yes/no):"
 read graphics
 
 if [[ "$graphics" =~ ^[yY][eE][sS]$ ]]; then
-    sudo pacman -Syu base-devel git python-pip unzip rsync bash-completion fish sddm intel-ucode amd-ucode mesa mesa-utils nvidia-dkms nvidia-utils nvidia-settings linux-headers qt5-wayland qt5ct libva
+    sudo pacman -Syu base-devel git python-pip unzip rsync bash-completion fish sddm intel-ucode amd-ucode mesa mesa-utils gvfs nvidia-dkms nvidia-utils nvidia-settings linux-headers qt5-wayland qt5ct libva
     mkdir Downloads && cd Downloads/
     mkdir _cloned-repos && cd _cloned-repos
     git clone https://aur.archlinux.org/paru.git
@@ -65,7 +65,7 @@ if [[ "$graphics" =~ ^[yY][eE][sS]$ ]]; then
     sudo sh -c "echo -e '[Autologin]\nUser=$USER\nSession=hyprland' > /etc/sddm.conf"
     systemctl start sddm
 elif [[ "$graphics" =~ ^[nN][oO]$ ]]; then
-    sudo pacman -Syu base-devel git python-pip unzip rsync intel-ucode amd-ucode bash-completion fish sddm linux-headers
+    sudo pacman -Syu base-devel git python-pip unzip rsync intel-ucode amd-ucode bash-completion fish gvfs sddm linux-headers
     mkdir Downloads && cd Downloads/
     mkdir _cloned-repos && cd _cloned-repos
     git clone https://aur.archlinux.org/paru.git
