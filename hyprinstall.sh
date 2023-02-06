@@ -1,6 +1,6 @@
 #!/bin/bash
 
-echo "What are you using? (Nvidia / VirtualBox / None):"
+echo "What are you using? (Nvidia / VirtualBox / If none of these press enter):"
 read graphics
 
 sudo pacman -Syu base-devel git python-pip unzip rsync intel-ucode amd-ucode bash-completion fish gvfs sddm linux-headers
@@ -11,7 +11,7 @@ cd paru/
 makepkg -si
 paru -S hyprland-bin sddm-git polkit-gnome ffmpeg swaybg polkit-kde-agent dunst grimblast rofi rofi-emoji wl-clipboard wf-recorder wlogout grimblast-git hyprpicker-git hyprpaper-git xdg-desktop-portal-hyprland-git ffmpegthumbnailer tumbler wtype colord imagemagick swaylock-effects qt5-wayland qt6-wayland ripgrep waybar-hyprland-git catppuccin-gtk-theme-mocha catppuccin-cursors-mocha catppuccin-mocha-grub-theme-git playerctl nwg-look cava pavucontrol ranger zsh starship neovim viewnior noise-suppression-for-voice thunar thunar-archive-plugin file-roller wezterm pamixer wlr-randr wtype ttf-twemoji-color noto-fonts-emoji
 pip install clang-tidy dulwich requests datetime
-if [[ "$graphics" =~ ^[yY][eE][sS]$ ]]; then
+if [[ "$graphics" =~ ^[nN][vV][iI][dD][iI][aA]$ ]]; then
 	sudo pacman -Syu nvidia-dkms nvidia-utils nvidia-settings qt5ct libva
 	paru -S nvidia-vaapi-driver-git
 	echo '
@@ -44,6 +44,35 @@ if [[ "$graphics" =~ ^[yY][eE][sS]$ ]]; then
     export WLR_NO_HARDWARE_CURSORS=1
     export CURSOR_INACTIVE_TIMEOUT=0
     export NO_CURSOR_WARPS=0
+    exec systemd-cat --identifier=hyprland /usr/bin/Hyprland $@
+    # Execute Hyprland
+    if [ -f /usr/local/bin/Hyprland ]; then
+       exec /usr/local/bin/Hyprland >/dev/null 2>&1
+    elif [ -f /usr/bin/Hyprland ]; then
+       exec /usr/bin/Hyprland >/dev/null 2>&1
+    fi' > ~/.local/bin/wrappedhl
+    sudo cp ~/.local/bin/wrappedhl /usr/share/wayland-sessions/wrapped_hl.desktop
+elif [[ "$graphics" =~ ^[vV][iI][rR][tT][uU][aA][lL][bB][oO][xX]$ ]]; then
+    echo '
+    export XDG_SESSION_TYPE=wayland
+    export LIBSEAT_BACKEND=logind
+    export WLR_NO_HARDWARE_CURSORS=1
+    ' >> ~/.bashrc && source ~/.bashrc
+    echo '
+    #!/usr/bin/env bash
+    # wrappedhl
+    # Launch Hyprland with a simple wrapper
+    cd ~
+    # Variables
+    export _JAVA_AWT_WM_NONREPARENTING=1
+    export XCURSOR_SIZE=24
+    export MOZ_ENABLE_WAYLAND=1
+    export LIBSEAT_BACKEND=logind
+    export WLR_NO_HARDWARE_CURSORS=1
+    export QT_QPA_PLATFORM=wayland
+    export QT_QPA_PLATFORMTHEME=gtk2
+    export SDL_VIDEODRIVER=wayland
+    export CLUTTER_BACKEND=wayland  
     exec Hyprland
     # Execute Hyprland
     if [ -f /usr/local/bin/Hyprland ]; then
