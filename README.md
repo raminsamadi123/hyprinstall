@@ -105,7 +105,6 @@ https://github.com/swaywm/sway/issues/5834
 https://ask.fedoraproject.org/t/cant-switch-back-to-x11/19640
 https://bbs.archlinux.org/viewtopic.php?id=164391
 https://www.reddit.com/r/hyprland/comments/y5fc5e/how_can_i_wrapping_the_launcher/
-```
 
 </details>
 
