@@ -23,14 +23,14 @@ if [[ "$graphics" =~ ^[yY][eE][sS]$ ]]; then
     sudo cp -R $HOME/Downloads/nerdfonts/ /usr/share/fonts/
     fc-cache -rv
     chmod +x ~/.config/waybar/scripts/waybar-wttr.py
-    echo "
+    echo '
     export LIBVA_DRIVER_NAME=nvidia
     export XDG_SESSION_TYPE=wayland
     export GBM_BACKEND=nvidia-drm
     export __GLX_VENDOR_LIBRARY_NAME=nvidia
     export WLR_NO_HARDWARE_CURSORS=1
     export CURSOR_INACTIVE_TIMEOUT=0
-    " >> ~/.bashrc && source ~/.bashrc
+    ' >> ~/.bashrc && source ~/.bashrc
     sudo sh -c "echo '
     MODULES=(nvidia nvidia_modeset nvidia_uvm nvidia_drm)
     BINARIES=()
