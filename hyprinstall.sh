@@ -1,29 +1,20 @@
 #!/bin/bash
-echo "Do you use NVIDIA graphics card? (yes/no):"
+
+echo "Do you use NVIDIA graphics card? (yes / if not press enter):"
 read graphics
 
+sudo pacman -Syu base-devel git python-pip unzip rsync intel-ucode amd-ucode bash-completion fish gvfs sddm linux-headers
+mkdir Downloads && cd Downloads/
+mkdir _cloned-repos && cd _cloned-repos
+git clone https://aur.archlinux.org/paru.git
+cd paru/
+makepkg -si
+paru -S hyprland-bin sddm-git polkit-gnome ffmpeg swaybg polkit-kde-agent dunst grimblast rofi rofi-emoji wl-clipboard wf-recorder wlogout grimblast-git hyprpicker-git hyprpaper-git xdg-desktop-portal-hyprland-git ffmpegthumbnailer tumbler wtype colord imagemagick swaylock-effects qt5-wayland qt6-wayland ripgrep waybar-hyprland-git catppuccin-gtk-theme-mocha catppuccin-cursors-mocha catppuccin-mocha-grub-theme-git playerctl nwg-look cava pavucontrol ranger zsh starship neovim viewnior noise-suppression-for-voice thunar thunar-archive-plugin file-roller wezterm pamixer wlr-randr wtype ttf-twemoji-color noto-fonts-emoji
+pip install clang-tidy dulwich requests datetime
 if [[ "$graphics" =~ ^[yY][eE][sS]$ ]]; then
-    sudo pacman -Syu base-devel git python-pip unzip rsync bash-completion fish sddm intel-ucode amd-ucode mesa mesa-utils gvfs nvidia-dkms nvidia-utils nvidia-settings linux-headers qt5-wayland qt5ct libva
-    mkdir Downloads && cd Downloads/
-    mkdir _cloned-repos && cd _cloned-repos
-    git clone https://aur.archlinux.org/paru.git
-    cd paru/
-    makepkg -si
-    paru -S hyprland-bin polkit-gnome ffmpeg swaybg sddm-git polkit-kde-agent dunst nvidia-vaapi-driver-git grimblast rofi rofi-emoji wl-clipboard wf-recorder wlogout grimblast-git hyprpicker-git hyprpaper-git xdg-desktop-portal-hyprland-git ffmpegthumbnailer tumbler wtype colord imagemagick swaylock-effects qt5-wayland qt6-wayland ripgrep waybar-hyprland-git catppuccin-gtk-theme-mocha catppuccin-cursors-mocha catppuccin-mocha-grub-theme-git playerctl nwg-look cava pavucontrol ranger zsh starship neovim viewnior noise-suppression-for-voice thunar thunar-archive-plugin file-roller wezterm pamixer wlr-randr wtype ttf-twemoji-color noto-fonts-emoji
-    pip install clang-tidy dulwich requests datetime
-    git clone https://github.com/raminsamadi123/hyprinstall $HOME/Downloads/hyprinstall/
-    cd $HOME/Downloads/hyprinstall/
-    rsync -avxHAXP --exclude '.git*' .* ~/
-    mkdir -p $HOME/Downloads/nerdfonts/
-    cd $HOME/Downloads/
-    wget https://github.com/raminsamadi123/hyprinstall/releases/download/Fonts/CascadiaCode.zip
-    wget https://github.com/raminsamadi123/hyprinstall/files/10593769/cartograph-cf-v2.zip
-    unzip '*.zip' -d $HOME/Downloads/nerdfonts/
-    rm -rf *.zip
-    sudo cp -R $HOME/Downloads/nerdfonts/ /usr/share/fonts/
-    fc-cache -rv
-    chmod +x ~/.config/waybar/scripts/waybar-wttr.py
-    echo '
+	sudo pacman -Syu nvidia-dkms nvidia-utils nvidia-settings qt5ct libva
+	paru -S nvidia-vaapi-driver-git
+	echo '
     export LIBVA_DRIVER_NAME=nvidia
     export XDG_SESSION_TYPE=wayland
     export GBM_BACKEND=nvidia-drm
@@ -61,34 +52,19 @@ if [[ "$graphics" =~ ^[yY][eE][sS]$ ]]; then
        exec /usr/bin/Hyprland >/dev/null 2>&1
     fi' > ~/.local/bin/wrappedhl
     sudo cp ~/.local/bin/wrappedhl /usr/share/wayland-sessions/wrapped_hl.desktop
-    sudo systemctl enable sddm
-    sudo sh -c "echo -e '[Autologin]\nUser=$USER\nSession=hyprland' > /etc/sddm.conf"
-    systemctl start sddm
-elif [[ "$graphics" =~ ^[nN][oO]$ ]]; then
-    sudo pacman -Syu base-devel git python-pip unzip rsync intel-ucode amd-ucode bash-completion fish gvfs sddm linux-headers
-    mkdir Downloads && cd Downloads/
-    mkdir _cloned-repos && cd _cloned-repos
-    git clone https://aur.archlinux.org/paru.git
-    cd paru/
-    makepkg -si
-    paru -S hyprland-bin sddm-git polkit-gnome ffmpeg swaybg polkit-kde-agent dunst grimblast rofi rofi-emoji wl-clipboard wf-recorder wlogout grimblast-git hyprpicker-git hyprpaper-git xdg-desktop-portal-hyprland-git ffmpegthumbnailer tumbler wtype colord imagemagick swaylock-effects qt5-wayland qt6-wayland ripgrep waybar-hyprland-git catppuccin-gtk-theme-mocha catppuccin-cursors-mocha catppuccin-mocha-grub-theme-git playerctl nwg-look cava pavucontrol ranger zsh starship neovim viewnior noise-suppression-for-voice thunar thunar-archive-plugin file-roller wezterm pamixer wlr-randr wtype ttf-twemoji-color noto-fonts-emoji
-    pip install clang-tidy dulwich requests datetime
-    git clone https://github.com/raminsamadi123/hyprinstall $HOME/Downloads/hyprinstall/
-    cd $HOME/Downloads/hyprinstall/
-    rsync -avxHAXP --exclude '.git*' .* ~/
-    mkdir -p $HOME/Downloads/nerdfonts/
-    cd $HOME/Downloads/
-    wget https://github.com/raminsamadi123/hyprinstall/releases/download/Fonts/CascadiaCode.zip
-    wget https://github.com/raminsamadi123/hyprinstall/files/10593769/cartograph-cf-v2.zip
-    unzip '*.zip' -d $HOME/Downloads/nerdfonts/
-    rm -rf *.zip
-    sudo cp -R $HOME/Downloads/nerdfonts/ /usr/share/fonts/
-    fc-cache -rv
-    chmod +x ~/.config/waybar/scripts/waybar-wttr.py
-    sudo systemctl enable sddm
-    sudo sh -c "echo -e '[Autologin]\nUser=$USER\nSession=hyprland' > /etc/sddm.conf"
-    systemctl start sddm
-else
-    echo "Invalid choice, please choose either yes or no."
-    exit 1
 fi
+git clone https://github.com/raminsamadi123/hyprinstall $HOME/Downloads/hyprinstall/
+cd $HOME/Downloads/hyprinstall/
+rsync -avxHAXP --exclude '.git*' .* ~/
+mkdir -p $HOME/Downloads/nerdfonts/
+cd $HOME/Downloads/
+wget https://github.com/raminsamadi123/hyprinstall/releases/download/Fonts/CascadiaCode.zip
+wget https://github.com/raminsamadi123/hyprinstall/files/10593769/cartograph-cf-v2.zip
+unzip '*.zip' -d $HOME/Downloads/nerdfonts/
+rm -rf *.zip
+sudo cp -R $HOME/Downloads/nerdfonts/ /usr/share/fonts/
+fc-cache -rv
+chmod +x ~/.config/waybar/scripts/waybar-wttr.py
+sudo systemctl enable sddm
+sudo sh -c "echo -e '[Autologin]\nUser=$USER\nSession=hyprland' > /etc/sddm.conf"
+systemctl start sddm
