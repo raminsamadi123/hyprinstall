@@ -1,6 +1,6 @@
 #!/bin/bash
 
-echo "Do you use NVIDIA graphics card? (yes / if not press enter):"
+echo "What are you using? (Nvidia / VirtualBox / None):"
 read graphics
 
 sudo pacman -Syu base-devel git python-pip unzip rsync intel-ucode amd-ucode bash-completion fish gvfs sddm linux-headers
