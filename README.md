@@ -88,6 +88,27 @@ reboot
 ```
 
 </details>
+
+<details>
+
+<summary><b>Problems in Virtualmachine?</b></summary>
+	
+#### Here's some articles if you really want to run it in a VM
+### Quick tip: Go into tty by pressing ctrl+alt+(F2-F6) and run: 
+
+```sh
+Hyprland
+```
+
+https://unix.stackexchange.com/questions/656328/libseat-backend-seatd-c70-could-not-connect-to-socket-run-seatd-sock-no-su
+https://github.com/swaywm/sway/issues/5834
+https://ask.fedoraproject.org/t/cant-switch-back-to-x11/19640
+https://bbs.archlinux.org/viewtopic.php?id=164391
+https://www.reddit.com/r/hyprland/comments/y5fc5e/how_can_i_wrapping_the_launcher/
+```
+
+</details>
+
 	
 ## Credits
 
