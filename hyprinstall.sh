@@ -15,7 +15,7 @@ pip install clang-tidy dulwich requests datetime
 echo 'Preparation completed' && sleep 5
 
 if [[ "$graphics" =~ ^[nN][vV][iI][dD][iI][aA]$ ]]; then
-echo 'hyprinstall for NVIDIA' && sleep 5
+echo 'hyprinstalling NVIDIA' && sleep 5
 sudo pacman -Syu nvidia-dkms nvidia-utils nvidia-settings qt5ct libva
 	paru -S nvidia-vaapi-driver-git
 	echo '
@@ -56,9 +56,9 @@ sudo pacman -Syu nvidia-dkms nvidia-utils nvidia-settings qt5ct libva
        exec /usr/bin/Hyprland >/dev/null 2>&1
     fi' > ~/.local/bin/wrappedhl
     sudo cp ~/.local/bin/wrappedhl /usr/share/wayland-sessions/wrapped_hl.desktop
-    echo 'hyprinstall Nvidia completed' && sleep 5
+    echo 'hyprinstalling Nvidia completed' && sleep 5
 elif [[ "$graphics" =~ ^[vV][iI][rR][tT][uU][aA][lL][bB][oO][xX]$ ]]; then
-    echo 'hyprinstall for VirtualBox' && sleep 5
+    echo 'hyprinstalling VirtualBox' && sleep 5
     sudo sh -c "echo 'LIBSEAT_BACKEND=logind' >> /etc/environment"
     echo '
     export XDG_SESSION_TYPE=wayland
@@ -88,7 +88,7 @@ elif [[ "$graphics" =~ ^[vV][iI][rR][tT][uU][aA][lL][bB][oO][xX]$ ]]; then
        exec /usr/bin/Hyprland >/dev/null 2>&1
     fi' > ~/.local/bin/wrappedhl
     sudo cp ~/.local/bin/wrappedhl /usr/share/wayland-sessions/wrapped_hl.desktop
-    echo 'hyprinstall VirtualBox completed' && sleep 5
+    echo 'hyprinstalling VirtualBox completed' && sleep 5
 fi
 
 echo 'hyprinstalling fonts and fixing known bugs' && sleep 5
