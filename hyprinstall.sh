@@ -53,7 +53,7 @@ if [[ "$graphics" =~ ^[nN][vV][iI][dD][iI][aA]$ ]]; then
     fi' > ~/.local/bin/wrappedhl
     sudo cp ~/.local/bin/wrappedhl /usr/share/wayland-sessions/wrapped_hl.desktop
 elif [[ "$graphics" =~ ^[vV][iI][rR][tT][uU][aA][lL][bB][oO][xX]$ ]]; then
-    echo '
+    sudo sh -c "echo 'LIBSEAT_BACKEND=logind' >> /etc/environment"
     export XDG_SESSION_TYPE=wayland
     export LIBSEAT_BACKEND=logind
     export WLR_NO_HARDWARE_CURSORS=1
