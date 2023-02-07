@@ -33,6 +33,7 @@ sudo pacman -Syu nvidia-dkms nvidia-utils nvidia-settings qt5ct libva
     HOOKS=(base udev autodetect keyboard keymap modconf block filesystems fsck)' > /etc/mkinitcpio.conf"
     sudo mkinitcpio --config /etc/mkinitcpio.conf --generate /boot/initramfs-custom.img
     sudo sh -c "echo 'options nvidia-drm modeset=1' > /etc/modprobe.d/nvidia.conf"
+    sudo sh -c "echo 'LIBSEAT_BACKEND=logind' >> /etc/environment"
     echo '
     #!/usr/bin/env bash
     # wrappedhl
