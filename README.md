@@ -93,7 +93,7 @@ reboot
 
 <summary><b>Problems in Virtualmachine?</b></summary>
 	
-#### Here's some articles if you really want to run it in a VM
+#### Here's some articles if you really want to run it in a VM. Remeber that you need to enable 3D acceleration.
 ### Quick tip: Go into tty by pressing ctrl+alt+(F2-F6) and run: 
 
 ```sh
