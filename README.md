@@ -100,6 +100,11 @@ reboot
 Hyprland
 ```
 
+### If you are on VMware install open-vm-tools
+```sh
+sudo pacman -Syu open-vm-tools xf86-input-vmouse xf86-video-vmware
+```
+
 https://unix.stackexchange.com/questions/656328/libseat-backend-seatd-c70-could-not-connect-to-socket-run-seatd-sock-no-su
 https://github.com/swaywm/sway/issues/5834
 https://ask.fedoraproject.org/t/cant-switch-back-to-x11/19640
