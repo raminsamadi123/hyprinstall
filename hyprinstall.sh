@@ -58,12 +58,14 @@ sudo pacman -Syu nvidia-dkms nvidia-utils nvidia-settings qt5ct libva
     sudo cp ~/.local/bin/wrappedhl /usr/share/wayland-sessions/wrapped_hl.desktop
     echo 'hyprinstalling Nvidia completed' && sleep 5
 elif [[ "$graphics" =~ ^[vV][iI][rR][tT][uU][aA][lL][bB][oO][xX]$ ]]; then
+    sudo pacman -Syu egl-wayland lib32-libva
     echo 'hyprinstalling VirtualBox' && sleep 5
     sudo sh -c "echo 'LIBSEAT_BACKEND=logind' >> /etc/environment"
     echo '
     export XDG_SESSION_TYPE=wayland
     export LIBSEAT_BACKEND=logind
     export WLR_NO_HARDWARE_CURSORS=1
+    export WLR_RENDERER_ALLOW_SOFTWARE=1 Hyprland
     ' >> ~/.bashrc && source ~/.bashrc
     echo '
     #!/usr/bin/env bash
@@ -74,6 +76,7 @@ elif [[ "$graphics" =~ ^[vV][iI][rR][tT][uU][aA][lL][bB][oO][xX]$ ]]; then
     export _JAVA_AWT_WM_NONREPARENTING=1
     export XCURSOR_SIZE=24
     export MOZ_ENABLE_WAYLAND=1
+    export WLR_RENDERER_ALLOW_SOFTWARE=1 Hyprland
     export LIBSEAT_BACKEND=logind
     export WLR_NO_HARDWARE_CURSORS=1
     export QT_QPA_PLATFORM=wayland
