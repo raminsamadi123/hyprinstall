@@ -129,6 +129,10 @@ paru -Rns sddm && paru -Rns sddm-git
 ```sh
 sudo sh -c "echo -e '[Service]\nExecStart=\nExecStart=-/sbin/agetty --noissue --autologin $USER %I \$TERM\nType=idle' > /etc/systemd/system/getty@tty1.service.d/override.conf" 
 ```
+### Make wrappedhl.desktop an executable
+```sh
+sudo chmod +x /usr/share/wayland-sessions/wrapped_hl.desktop
+```
 ### Make Hyprland run automatically on startup
 ```sh
 echo '
