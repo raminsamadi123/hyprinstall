@@ -116,14 +116,30 @@ https://www.reddit.com/r/hyprland/comments/y5fc5e/how_can_i_wrapping_the_launche
 <details>
 
 <summary><b>Configure extra fast boot time</b></summary>
+
+### All-in-One Command installation
+```sh
+paru -Syu mingetty && paru -Rns sddm-git && sudo sh -c "echo -e '[Service]\nExecStart=\nExecStart=-/sbin/agetty --noissue --autologin $USER %I \$TERM\nType=idle' > /etc/systemd/system/getty@tty1.service.d/override.conf" && sudo chmod +x /usr/share/wayland-sessions/wrapped_hl.desktop && echo '
+#
+# ~/.bash_profile
+#
+
+[[ -f ~/.bashrc ]] && . ~/.bashrc
+
+if [[ "$(tty)" == "/dev/tty1" ]]
+then
+   /usr/share/wayland-sessions/wrapped_hl.desktop
+fi
+' > ~/.bash_profile && source ~/.bash_profile
+```
 	
 ### Install mingetty
 ```sh
 paru -Syu mingetty
 ```
-### Uninstall sddm or sddm-git
+### Uninstall sddm-git
 ```sh
-paru -Rns sddm && paru -Rns sddm-git
+paru -Rns sddm-git
 ```
 ### Create override.conf for your tty1 (if problems occur try changing -/sbin/agetty to -/sbin/mgetty or -/sbin/getty
 ```sh
