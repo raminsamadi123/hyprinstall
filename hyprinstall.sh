@@ -10,7 +10,7 @@ mkdir _cloned-repos && cd _cloned-repos
 git clone https://aur.archlinux.org/paru.git
 cd paru/
 makepkg -si
-paru -S hyprland-bin sddm-git polkit-gnome ffmpeg swaybg polkit-kde-agent dunst rofi rofi-emoji wl-clipboard-rs wl-clipboard-x11 wf-recorder wlogout grimblast-git hyprpicker-git hyprpaper-git xdg-desktop-portal-hyprland-git ffmpegthumbnailer tumbler wtype colord imagemagick swaylock-effects qt5-wayland qt6-wayland ripgrep waybar-hyprland-git catppuccin-gtk-theme-mocha catppuccin-cursors-mocha catppuccin-mocha-grub-theme-git playerctl nwg-look cava pavucontrol ranger zsh starship neovim viewnior noise-suppression-for-voice thunar thunar-archive-plugin file-roller wezterm pamixer wlr-randr wtype ttf-twemoji-color-git noto-fonts-emoji
+paru -S hyprland-bin sddm-git polkit-gnome ffmpeg swaybg polkit-kde-agent dunst rofi rofi-emoji wl-clipboard-rs wl-clipboard-x11 wf-recorder wlogout grimblast-git hyprpicker-git hyprpaper-git xdg-desktop-portal-hyprland-git ffmpegthumbnailer tumbler wtype colord imagemagick swaylock-effects qt5-wayland qt6-wayland ripgrep waybar-hyprland-git catppuccin-gtk-theme-mocha catppuccin-cursors-mocha catppuccin-mocha-grub-theme-git playerctl nwg-look cava pavucontrol ranger zsh starship neovim viewnior noise-suppression-for-voice thunar thunar-archive-plugin file-roller wezterm pamixer wlr-randr wtype ttf-twemoji-color noto-fonts-emoji
 pip install clang-tidy dulwich requests datetime
 echo 'Preparation completed' && sleep 5
 
