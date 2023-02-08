@@ -165,7 +165,87 @@ fi
 ' > ~/.bash_profile && source ~/.bash_profile
 ```
 </details>
+
+<details>
+
+<summary><b>Silent-boot for systemd-bootctl</b></summary>
 	
+### Install an editor of your choice
+```sh
+sudo pacman -Syu vim
+```
+### Edit your entries .conf file (Mine looks like this)
+```sh
+sudo vim /boot/loader/entries/2023-02-05_21-29-22_linux.conf
+```
+### add this at the end of options rw quiet splash loglevel=0 (it should look something like this)
+```sh
+options root=PARTUUID=a49e02ad-bb32-476d-b200-4812aafcd87f zswap.enabled=0 rw intel_pstate=no_hwp rootfstype=ext4 rw quiet splash loglevel=0
+```
+### Update your bootctl
+```sh
+bootctl update
+```
+
+</details>
+
+<details>
+
+<summary><b>Silent-boot for grub</b></summary>
+	
+### Install an editor of your choice
+```sh
+sudo pacman -Syu vim
+```
+### Edit your entries grub file
+```sh
+sudo vim /etc/default/grub
+```
+### Add loglevel=0 in between quiet splashscreen (like this)
+```sh
+GRUB_CMDLINE_LINUX_DEFAULT="quiet loglevel=0 splash"
+```
+### Update your grub
+```sh
+grub-mkconfig -o /boot/grub/grub.cfg
+```
+
+</details>
+
+<details>
+
+<summary><b>How to remove timeout during systemd boot</b></summary>
+	
+### Run this in your terminal
+```sh
+sudo sh -c "echo -e '#timeout 3\n#console-mode keep' > /boot/loader/loader.conf" 
+```
+
+</details>
+
+<details>
+
+<summary><b>How to remove timeout during grub boot</b></summary>
+	
+### Install an editor of your choice
+```sh
+sudo pacman -Syu vim 
+```
+### Edit your grub file
+```sh
+sudo vim /etc/default/grub 
+```
+### Change GRUB_TIMEOUT to be equal to 0
+```sh
+GRUB_TIMEOUT=0 
+```
+### Update grub
+```sh
+grub-mkconfig -o /boot/grub/grub.cfg
+```
+
+</details>
+
 ## Credits
 
 _Beauty community: [r/unixporn](https://www.reddit.com/r/unixporn)._
