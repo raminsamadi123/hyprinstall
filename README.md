@@ -121,7 +121,7 @@ https://www.reddit.com/r/hyprland/comments/y5fc5e/how_can_i_wrapping_the_launche
 ```sh
 paru -Syu mingetty
 ```
-### Uinstall sddm or sddm-git
+### Uninstall sddm or sddm-git
 ```sh
 paru -Rns sddm && paru -Rns sddm-git
 ```
