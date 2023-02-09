@@ -108,6 +108,7 @@ rm -rf *.zip
 sudo cp -R $HOME/Downloads/nerdfonts/ /usr/share/fonts/
 fc-cache -rv
 chmod +x ~/.config/waybar/scripts/waybar-wttr.py
+sudo chmod +x ~/.scripts/screensht
 sudo systemctl enable sddm
 sudo sh -c "echo -e '[Autologin]\nUser=$USER\nSession=hyprland' > /etc/sddm.conf"
 systemctl start sddm
