@@ -248,7 +248,7 @@ grub-mkconfig -o /boot/grub/grub.cfg
 
 <details>
 
-<summary><b>How to get color picker</b></summary>
+<summary><b>How to get color picker (Workaround if hyprpicker does not work)</b></summary>
 
 https://youtu.be/dmIWCFe3B-Q
 ### Install an editor of your choice
