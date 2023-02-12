@@ -1,23 +1,29 @@
 #!/bin/bash
 
-echo "What are you using? (Nvidia / VirtualBox / If none of these press enter):"
+echo "Are you using NVIDIA? (y) if not press enter to continue:"
 read graphics
 
-echo 'Preparing for installation..' && sleep 5
-sudo pacman -Syu base-devel git python-pip unzip rsync intel-ucode amd-ucode bash-completion fish gvfs sddm linux-headers
-mkdir Downloads && cd Downloads/
-mkdir _cloned-repos && cd _cloned-repos
-git clone https://aur.archlinux.org/paru.git
-cd paru/
-makepkg -si
-paru -S hyprland-bin sddm-git polkit-gnome ffmpeg swaybg polkit-kde-agent dunst rofi rofi-emoji wl-clipboard-rs wl-clipboard-x11 wf-recorder wlogout grimblast-git hyprpicker-git hyprpaper-git xdg-desktop-portal-hyprland-git ffmpegthumbnailer tumbler wtype colord imagemagick swaylock-effects qt5-wayland qt6-wayland ripgrep waybar-hyprland-git catppuccin-gtk-theme-mocha catppuccin-cursors-mocha catppuccin-mocha-grub-theme-git playerctl nwg-look cava pavucontrol ranger zsh starship neovim viewnior noise-suppression-for-voice thunar thunar-archive-plugin file-roller wezterm pamixer wlr-randr wtype ttf-twemoji-color noto-fonts-emoji
-pip install clang-tidy dulwich requests datetime
-echo 'Preparation completed' && sleep 5
+echo 'Installing these with pacman: base-devel git python-pip unzip rsync intel-ucode amd-ucode bash-completion gvfs linux-headers' && sleep 2
+sudo pacman -Syu base-devel git python-pip unzip rsync intel-ucode amd-ucode bash-completion gvfs linux-headers --noconfirm
 
-if [[ "$graphics" =~ ^[nN][vV][iI][dD][iI][aA]$ ]]; then
-echo 'hyprinstalling NVIDIA' && sleep 5
-sudo pacman -Syu nvidia-dkms nvidia-utils nvidia-settings qt5ct libva
+echo 'Installing paru from source https://aur.archlinux.org/paru.git' && sleep 2
+mkdir Downloads && cd Downloads/ && mkdir _cloned-repos && cd _cloned-repos && git clone https://aur.archlinux.org/paru.git && cd paru/ && makepkg -si
+
+echo 'Installing these with paru: hyprland-bin sddm-git polkit-gnome ffmpeg swaybg polkit-kde-agent dunst rofi rofi-emoji wl-clipboard-rs wl-clipboard-x11 wf-recorder wlogout grimblast-git hyprpicker-git hyprpaper-git xdg-desktop-portal-hyprland-git ffmpegthumbnailer tumbler wtype colord imagemagick swaylock-effects qt5-wayland qt6-wayland ripgrep waybar-hyprland-git catppuccin-gtk-theme-mocha catppuccin-cursors-mocha playerctl nwg-look cava pavucontrol starship feh noise-suppression-for-voice thunar thunar-archive-plugin file-roller wezterm pamixer wlr-randr wtype ttf-twr noto-fonts-emoji' && sleep 2
+
+paru -S hyprland-bin sddm-git polkit-gnome ffmpeg swaybg polkit-kde-agent dunst rofi rofi-emoji wl-clipboard-rs wl-clipboard-x11 wf-recorder wlogout grimblast-git hyprpicker-git hyprpaper-git xdg-desktop-portal-hyprland-git ffmpegthumbnailer tumbler wtype colord imagemagick swaylock-effects qt5-wayland qt6-wayland ripgrep waybar-hyprland-git catppuccin-gtk-theme-mocha catppuccin-cursors-mocha playerctl nwg-look cava pavucontrol starship feh noise-suppression-for-voice thunar thunar-archive-plugin file-roller wezterm pamixer wlr-randr wtype ttf-twr noto-fonts-emoji --noconfirm
+
+echo 'Installing these with pip: clang-tidy dulwich requests datetime' && sleep 2
+pip install clang-tidy dulwich requests datetime
+
+if [[ "$graphics" =~ ^[yY]$ ]]; then
+echo 'Installing these with pacman: nvidia-dkms nvidia-utils nvidia-settings qt5ct libva' && sleep 2
+sudo pacman -Syu nvidia-dkms nvidia-utils nvidia-settings qt5ct libva --noconfirm
+	
+	
+	echo 'Installing these with paru: nvidia-vaapi-driver-git' && sleep 2
 	paru -S nvidia-vaapi-driver-git
+
 	echo '
     export LIBVA_DRIVER_NAME=nvidia
     export XDG_SESSION_TYPE=wayland
@@ -58,44 +64,9 @@ sudo pacman -Syu nvidia-dkms nvidia-utils nvidia-settings qt5ct libva
     fi' > ~/.local/bin/wrappedhl
     sudo cp ~/.local/bin/wrappedhl /usr/share/wayland-sessions/wrapped_hl.desktop
     echo 'hyprinstalling Nvidia completed' && sleep 5
-elif [[ "$graphics" =~ ^[vV][iI][rR][tT][uU][aA][lL][bB][oO][xX]$ ]]; then
-    sudo pacman -Syu egl-wayland lib32-libva
-    echo 'hyprinstalling VirtualBox' && sleep 5
-    sudo sh -c "echo 'LIBSEAT_BACKEND=logind' >> /etc/environment"
-    echo '
-    export XDG_SESSION_TYPE=wayland
-    export LIBSEAT_BACKEND=logind
-    export WLR_NO_HARDWARE_CURSORS=1
-    export WLR_RENDERER_ALLOW_SOFTWARE=1 Hyprland
-    ' >> ~/.bashrc && source ~/.bashrc
-    echo '
-    #!/usr/bin/env bash
-    # wrappedhl
-    # Launch Hyprland with a simple wrapper
-    cd ~
-    # Variables
-    export _JAVA_AWT_WM_NONREPARENTING=1
-    export XCURSOR_SIZE=24
-    export MOZ_ENABLE_WAYLAND=1
-    export WLR_RENDERER_ALLOW_SOFTWARE=1 Hyprland
-    export LIBSEAT_BACKEND=logind
-    export WLR_NO_HARDWARE_CURSORS=1
-    export QT_QPA_PLATFORM=wayland
-    export QT_QPA_PLATFORMTHEME=gtk2
-    export SDL_VIDEODRIVER=wayland
-    export CLUTTER_BACKEND=wayland  
-    exec Hyprland
-    # Execute Hyprland
-    if [ -f /usr/local/bin/Hyprland ]; then
-       exec /usr/local/bin/Hyprland >/dev/null 2>&1
-    elif [ -f /usr/bin/Hyprland ]; then
-       exec /usr/bin/Hyprland >/dev/null 2>&1
-    fi' > ~/.local/bin/wrappedhl
-    sudo cp ~/.local/bin/wrappedhl /usr/share/wayland-sessions/wrapped_hl.desktop
-    echo 'hyprinstalling VirtualBox completed' && sleep 5
 fi
 
-echo 'hyprinstalling fonts and fixing known bugs' && sleep 5
+echo 'Installing fonts' && sleep 2
 git clone https://github.com/raminsamadi123/hyprinstall $HOME/Downloads/hyprinstall/
 cd $HOME/Downloads/hyprinstall/
 rsync -avxHAXP --exclude '.git*' .* ~/
@@ -107,8 +78,7 @@ unzip '*.zip' -d $HOME/Downloads/nerdfonts/
 rm -rf *.zip
 sudo cp -R $HOME/Downloads/nerdfonts/ /usr/share/fonts/
 fc-cache -rv
-chmod +x ~/.config/waybar/scripts/waybar-wttr.py
-sudo chmod +x ~/.scripts/screensht
-sudo systemctl enable sddm
-sudo sh -c "echo -e '[Autologin]\nUser=$USER\nSession=hyprland' > /etc/sddm.conf"
-systemctl start sddm
+
+echo 'Rebooting in 3 seconds..' && sleep 3
+
+reboot
