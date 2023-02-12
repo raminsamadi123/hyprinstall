@@ -23,15 +23,13 @@ configuration {
 
 window {
     transparency: "real";
-    background-color: #1917244D;
-    text-color: #6e6a86;
-    location: west;
-    anchor: west;
-    x-offset: 5px;
-    y-offset: -50px;
-    height: 70%;
-    width: 350px;
-    orientation: vertical;
+    background-color: #2F3136;
+    text-color: #ffffffb3;
+    location: center;
+    anchor: center;
+    height: 44%;
+    width: 35%;
+    orientation: horizontal;
 }
 
 prompt {
@@ -43,7 +41,7 @@ button {
     str: " ";
     font: "FantasqueSansMono Nerd Font 16";
     expand: false;
-    text-color: #6e6a86;
+    text-color: #ffffffb3;
     background-color: @transparent;
     vertical-align: 0.5;
     horizontal-align: 0.5;
@@ -52,12 +50,12 @@ button {
 entry {
     font: "Inter Regular 12";
     background-color: @transparent;
-    text-color: #6e6a86;
+    text-color: #ffffffb3;
     expand: true;
-    vertical-align: 0.5;
+    vertical-align: 0.8;
     horizontal-align: 0;
-    placeholder: "Global Search";
-    placeholder-color: @foreground;
+    placeholder: "";
+    placeholder-color: #ffffffb3;
     blink: true;
 }
 
@@ -73,13 +71,14 @@ entry-wrapper {
 inputbar {
     padding: 14px;
     margin: 10px 10px 14px 10px;
-    background-color: #26233a;
+    background-color: #202225;
     text-color: @foreground;
     expand: false;
     border-radius: 9px;
     position: north;
     children: [ entry-wrapper ];
 }
+
 
 listview {
     background-color: @transparent;
@@ -99,7 +98,7 @@ mainbox {
 }
 
 scrollbar {
-    background-color: @background-white;
+    background-color: @transparent;
     handle-width: 0;
     margin: 0 0 5px 0;
     border-radius: 9px;
@@ -121,7 +120,7 @@ element-icon {
     size: 24px;
     border: 0;
     border-color: @transparent;
-    background-color: transparent;
+    background-color: @transparent;
 }
 
 element-text {
@@ -129,34 +128,11 @@ element-text {
     expand: true;
     horizontal-align: 0;
     vertical-align: 0.5;
-    color: #6e6a86;
-    background-color: transparent;
-}
-
-element normal.urgent,
-element alternate.urgent {
-    background-color: @urgent;
-    text-color: @foreground;
-    border-radius: 9px;
-}
-
-element normal.active,
-element alternate.active {
-    background-color: @background-active;
-    text-color: @foreground;
+    color: #ffffffb3;
+    background-color: @transparent;
 }
 
 element selected {
-    background-color: #403d5220;
+    background-color: #42464D;
     text-color: @foreground;
-}
-
-element selected.urgent {
-    background-color: @urgent-selected;
-    text-color: @foreground;
-}
-
-element selected.active {
-    background-color: #403d5220;
-    color: @foreground-selected;
 }
