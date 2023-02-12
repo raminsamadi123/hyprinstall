@@ -1,68 +1,156 @@
 configuration {
-	display-emoji: "";
-	show-icons: false;
-	me-select-entry: "";
-	me-accept-entry: "MousePrimary";
+   show-icons: false;
+   me-select-entry: "";
+   me-accept-entry: "MousePrimary";
 }
 
 * {
-	font: "Noto Sans 11";
-	text-color: #eff0eb;
-	background-color: #1917244D;
-	border-color: #00000000;
-	width: 684px;
-	height: 477px;
-	location: 0;
+    transparent: #00000000;
+    foreground: #F2F2F2EE;
+    background-selected: #F2F2F245;
+    background-active: #F2F2F230;
+    background-white: #F2F2F211;
+    background-black: #00000000;
+    urgent: #E91E6366;
+    urgent-selected: #E91E6377;
 }
 
-inputbar {
-	border: 0 0 1px 0;
-	children: [prompt,entry];
+window {
+    transparency: "real";
+    background-color: #2F3136;
+    text-color: #ffffffb3;
+    location: center;
+    anchor: center;
+    height: 44%;
+    width: 35%;
+    orientation: vertical;
 }
 
 prompt {
-	font: "Noto Sans 18";
-	vertical-align: 0.5;
-	padding: 0px 9px 0px 9px;
-	border: 0 1px 0 0;
+    enabled: false;
+}
+
+button {
+    action: "ok";
+    str: " ";
+    font: "FantasqueSansMono Nerd Font 16";
+    expand: false;
+    text-color: #ffffffb3;
+    background-color: @transparent;
+    vertical-align: 0.5;
+    horizontal-align: 0.5;
 }
 
 entry {
-	padding: 12px;
+    font: "Inter Regular 12";
+    background-color: @transparent;
+    text-color: #ffffffb3;
+    expand: true;
+    vertical-align: 0.8;
+    horizontal-align: 0;
+    placeholder: "";
+    placeholder-color: #ffffffb3;
+    blink: true;
 }
 
-textbox {
-	background-color: #1917244D;
-	border-color: #1917244D;
-	padding: 13px 13px;
+entry-wrapper {
+    orientation: horizontal;
+    margin: 0px 12px 0px 12px;
+    spacing: 24px;
+    vertical-align: 0.5;
+    background-color: @transparent;
+    children: [ button, entry ];
 }
+
+inputbar {
+    padding: 14px;
+    margin: 10px 10px 14px 10px;
+    background-color: #202225;
+    text-color: @foreground;
+    expand: false;
+    border-radius: 9px;
+    position: north;
+    children: [ entry-wrapper ];
+}
+
 
 listview {
-	cycle: false;
-	scrollbar: false;
-	columns: 9;
-	cycle: false;
-	dynamic: false;
-	layout: vertical;
-	padding: 8px 10px 10px 10px;
+    background-color: @transparent;
+    spacing: 0px;
+    cycle: true;
+    columns: 5;
+    dynamic: true;
+    scrollbar: true;
+}
+
+mainbox {
+    width: 200px;
+    expand: true;
+    spacing: 12px;
+    padding: 5px;
+    background-color: @background-black;
+    children: [ inputbar, listview ];
+}
+
+scrollbar {
+    background-color: @transparent;
+    handle-width: 0;
+    margin: 0 0 5px 0;
+    border-radius: 9px;
 }
 
 element {
-	border-radius: 3px;
-	padding: 14px 0px 14px 0px;
+    background-color: @transparent;
+    text-color: @foreground;
+    orientation: vertical;
+    border: 0px;
+    border-color: @background-white;
+    border-radius: 6px;
+    spacing: 24px;
+    margin: 0px 12px 0px 12px;
+    padding: 10px 24px 10px 24px;
+}
+
+element-icon {
+    size: 24px;
+    border: 0px;
+    border-color: @transparent;
+    background-color: @transparent;
 }
 
 element-text {
-	font: "Noto Color Emoji 27";
-	expand: false;
-	text-color: #333333;
-	horizontal-align: 1;
-	vertical-align: 0.5;
-	margin: 0px 0px 0px 13px;
-	width: 1px;
-	padding: 1px 0px 16px;
+    font: "Noto Color Emoji 27";
+    expand: true;
+    horizontal-align: 0.5;
+    vertical-align: 0.5;
+    color: #ffffffb3;
+    background-color: @transparent;
+}
+
+element normal.urgent,
+element alternate.urgent {
+    background-color: @urgent;
+    text-color: @foreground;
+    border-radius: 9px;
+}
+
+element normal.active,
+element alternate.active {
+    background-color: @background-active;
+    text-color: @foreground;
 }
 
 element selected {
-	background-color: #191724;
+    background-color: #42464D;
+    text-color: @foreground;
+}
+
+element selected.urgent {
+    background-color: @urgent-selected;
+    text-color: @foreground;
+}
+
+element selected.active {
+    background-color: #403d5220;
+    color: @foreground-selected;
 }
