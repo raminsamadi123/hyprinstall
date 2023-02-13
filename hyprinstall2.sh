@@ -7,7 +7,7 @@ sudo pacman -Syu base-devel git python-pip unzip rsync intel-ucode amd-ucode bas
 
 mkdir Downloads && cd Downloads/ && mkdir _cloned-repos && cd _cloned-repos && git clone https://aur.archlinux.org/paru.git && cd paru/ && makepkg -si
 
-paru -S hyprland-bin polkit-gnome ffmpeg swaybg polkit-kde-agent dunst rofi rofi-emoji wl-clipboard-rs wl-clipboard-x11 wf-recorder wlogout grimblast-git hyprpicker-git hyprpaper-git xdg-desktop-portal-hyprland-git ffmpegthumbnailer tumbler wtype colord imagemagick swaylock-effects qt5-wayland qt6-wayland ripgrep waybar-hyprland-git catppuccin-gtk-theme-mocha playerctl nwg-look cava pavucontrol ranger zsh starship neovim viewnior noise-suppression-for-voice thunar thunar-archive-plugin file-roller wezterm pamixer wlr-randr wtype noto-fonts-emoji
+paru -S hyprland-bin polkit-gnome ffmpeg swaybg polkit-kde-agent dunst rofi rofi-emoji wl-clipboard-rs wl-clipboard-x11 wf-recorder wlogout grimblast-git hyprpicker-git mingetty hyprpaper-git xdg-desktop-portal-hyprland-git ffmpegthumbnailer tumbler wtype colord imagemagick swaylock-effects qt5-wayland qt6-wayland ripgrep waybar-hyprland-git catppuccin-gtk-theme-mocha playerctl nwg-look cava pavucontrol ranger zsh starship neovim viewnior noise-suppression-for-voice thunar thunar-archive-plugin file-roller wezterm pamixer wlr-randr wtype noto-fonts-emoji
 pip install clang-tidy dulwich requests datetime
 
 if [[ "$graphics" =~ ^[nN][vV][iI][dD][iI][aA]$ ]]; then
@@ -54,7 +54,6 @@ sudo pacman -Syu nvidia-dkms nvidia-utils nvidia-settings qt5ct libva
     sudo cp ~/.local/bin/wrappedhl /usr/share/wayland-sessions/wrapped_hl.desktop
 fi
 
-paru -Syu mingetty
 sudo mkdir /etc/systemd/system/getty@tty1.service.d 
 sudo touch override.conf /etc/systemd/system/getty@tty1.service.d/
 sudo sh -c "echo -e '[Service]\nExecStart=\nExecStart=-/sbin/agetty --noissue --autologin $USER %I \$TERM\nType=idle' > /etc/systemd/system/getty@tty1.service.d/override.conf" 
