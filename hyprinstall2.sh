@@ -54,6 +54,18 @@ sudo pacman -Syu nvidia-dkms nvidia-utils nvidia-settings qt5ct libva
     sudo cp ~/.local/bin/wrappedhl /usr/share/wayland-sessions/wrapped_hl.desktop
 fi
 
+git clone https://github.com/raminsamadi123/hyprinstall $HOME/Downloads/hyprinstall/
+cd $HOME/Downloads/hyprinstall/
+rsync -avxHAXP --exclude '.git*' .* ~/
+mkdir -p $HOME/Downloads/nerdfonts/
+cd $HOME/Downloads/
+wget https://github.com/raminsamadi123/hyprinstall/releases/download/Fonts/CascadiaCode.zip
+wget https://github.com/raminsamadi123/hyprinstall/files/10593769/cartograph-cf-v2.zip
+unzip '*.zip' -d $HOME/Downloads/nerdfonts/
+rm -rf *.zip
+sudo cp -R $HOME/Downloads/nerdfonts/ /usr/share/fonts/
+fc-cache -rv
+
 sudo mkdir /etc/systemd/system/getty@tty1.service.d 
 sudo touch override.conf /etc/systemd/system/getty@tty1.service.d/
 sudo sh -c "echo -e '[Service]\nExecStart=\nExecStart=-/sbin/agetty --noissue --autologin $USER %I \$TERM\nType=idle' > /etc/systemd/system/getty@tty1.service.d/override.conf" 
@@ -73,15 +85,4 @@ fi
 systemctl daemon-reload
 systemctl enable --now getty@tty1.service
 
-git clone https://github.com/raminsamadi123/hyprinstall $HOME/Downloads/hyprinstall/
-cd $HOME/Downloads/hyprinstall/
-rsync -avxHAXP --exclude '.git*' .* ~/
-mkdir -p $HOME/Downloads/nerdfonts/
-cd $HOME/Downloads/
-wget https://github.com/raminsamadi123/hyprinstall/releases/download/Fonts/CascadiaCode.zip
-wget https://github.com/raminsamadi123/hyprinstall/files/10593769/cartograph-cf-v2.zip
-unzip '*.zip' -d $HOME/Downloads/nerdfonts/
-rm -rf *.zip
-sudo cp -R $HOME/Downloads/nerdfonts/ /usr/share/fonts/
-fc-cache -rv
 reboot
