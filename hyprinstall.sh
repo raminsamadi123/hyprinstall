@@ -20,7 +20,7 @@ sudo pacman -Syu nvidia-dkms nvidia-utils nvidia-settings qt5ct libva --noconfir
 	
 	
 	echo 'Installing these with paru: nvidia-vaapi-driver-git' && sleep 2
-	paru -S nvidia-vaapi-driver-git
+	paru -S nvidia-vaapi-driver-git --noconfirm
 
 	echo '
     export LIBVA_DRIVER_NAME=nvidia
