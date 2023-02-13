@@ -3,24 +3,24 @@ echo "Are you using NVIDIA? (y) if not press enter to continue:"
 read graphics
 
 echo 'Installing these with pacman: base-devel git python-pip unzip rsync intel-ucode amd-ucode bash-completion gvfs linux-headers' && sleep 2
-sudo pacman -Syu base-devel git python-pip unzip rsync intel-ucode amd-ucode bash-completion gvfs linux-headers --noconfirm
+sudo pacman -Syu base-devel git python-pip unzip rsync intel-ucode amd-ucode bash-completion gvfs linux-headers
 
 echo 'Installing paru from source https://aur.archlinux.org/paru.git' && sleep 2
 mkdir Downloads && cd Downloads/ && mkdir _cloned-repos && cd _cloned-repos && git clone https://aur.archlinux.org/paru.git && cd paru/ && makepkg -si
 
 echo 'Installing these with paru: hyprland-bin sddm-git polkit-gnome ffmpeg swaybg polkit-kde-agent dunst rofi rofi-emoji wl-clipboard-rs wl-clipboard-x11 wf-recorder wlogout grimblast-git hyprpicker-git hyprpaper-git xdg-desktop-portal-hyprland-git ffmpegthumbnailer tumbler wtype colord imagemagick swaylock-effects qt5-wayland qt6-wayland ripgrep waybar-hyprland-git catppuccin-gtk-theme-mocha catppuccin-cursors-mocha playerctl nwg-look cava pavucontrol starship feh noise-suppression-for-voice thunar thunar-archive-plugin file-roller wezterm pamixer wlr-randr wtype ttf-twr noto-fonts-emoji' && sleep 2
-paru -S hyprland-bin sddm-git polkit-gnome ffmpeg swaybg polkit-kde-agent dunst rofi rofi-emoji wl-clipboard-rs wl-clipboard-x11 wf-recorder wlogout grimblast-git hyprpicker-git hyprpaper-git xdg-desktop-portal-hyprland-git ffmpegthumbnailer tumbler wtype colord imagemagick swaylock-effects qt5-wayland qt6-wayland ripgrep waybar-hyprland-git catppuccin-gtk-theme-mocha catppuccin-cursors-mocha playerctl nwg-look cava pavucontrol starship feh noise-suppression-for-voice thunar thunar-archive-plugin file-roller wezterm pamixer wlr-randr wtype ttf-twr noto-fonts-emoji --noconfirm
+paru -S hyprland-bin sddm-git polkit-gnome ffmpeg swaybg polkit-kde-agent dunst rofi rofi-emoji wl-clipboard-rs wl-clipboard-x11 wf-recorder wlogout grimblast-git hyprpicker-git hyprpaper-git xdg-desktop-portal-hyprland-git ffmpegthumbnailer tumbler wtype colord imagemagick swaylock-effects qt5-wayland qt6-wayland ripgrep waybar-hyprland-git catppuccin-gtk-theme-mocha catppuccin-cursors-mocha playerctl nwg-look cava pavucontrol starship feh noise-suppression-for-voice thunar thunar-archive-plugin file-roller wezterm pamixer wlr-randr wtype ttf-twr noto-fonts-emoji
 
 echo 'Installing these with pip: clang-tidy dulwich requests datetime' && sleep 2
 pip install clang-tidy dulwich requests datetime
 
 if [[ "$graphics" =~ ^[yY]$ ]]; then
 echo 'Installing these with pacman: nvidia-dkms nvidia-utils nvidia-settings qt5ct libva' && sleep 2
-sudo pacman -Syu nvidia-dkms nvidia-utils nvidia-settings qt5ct libva --noconfirm
+sudo pacman -Syu nvidia-dkms nvidia-utils nvidia-settings qt5ct libva
 	
 	
 	echo 'Installing these with paru: nvidia-vaapi-driver-git' && sleep 2
-	paru -S nvidia-vaapi-driver-git --noconfirm
+	paru -S nvidia-vaapi-driver-git
 
 	echo '
     export LIBVA_DRIVER_NAME=nvidia
@@ -77,7 +77,7 @@ rm -rf *.zip
 sudo cp -R $HOME/Downloads/nerdfonts/ /usr/share/fonts/
 fc-cache -rv
 
-sudo pacman -Syu flatpak bat strace neofetch thefuck tldr vlc kdenlive lshw ncdu btop traceroute curl tree trash-cli cronie vi electron --noconfirm
+sudo pacman -Syu flatpak bat strace neofetch thefuck tldr vlc kdenlive lshw ncdu btop traceroute curl tree trash-cli cronie vi electron
 cd && git clone https://aur.archlinux.org/yay-bin
 cd yay-bin
 makepkg -si && cd
