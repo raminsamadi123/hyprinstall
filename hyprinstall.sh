@@ -77,7 +77,7 @@ rm -rf *.zip
 sudo cp -R $HOME/Downloads/nerdfonts/ /usr/share/fonts/
 fc-cache -rv
 
-sudo pacman -Syu flatpak bat strace neofetch thefuck tldr vlc kdenlive lshw telegram-desktop ncdu btop traceroute curl tree trash-cli cronie vi electron
+sudo pacman -Syu flatpak bat strace neofetch thefuck tldr vlc kdenlive lshw ncdu btop traceroute curl tree trash-cli cronie vi electron --noconfirm
 cd && git clone https://aur.archlinux.org/yay-bin
 cd yay-bin
 makepkg -si && cd
