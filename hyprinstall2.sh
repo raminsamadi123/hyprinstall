@@ -84,5 +84,20 @@ fi
 ' > ~/.bash_profile && source ~/.bash_profile
 systemctl daemon-reload
 systemctl enable --now getty@tty1.service
+paru -Syu mingetty
+sudo sh -c "echo -e '[Service]\nExecStart=\nExecStart=-/sbin/agetty --noissue --autologin $USER %I \$TERM\nType=idle' > /etc/systemd/system/getty@tty1.service.d/override.conf" 
+sudo chmod +x /usr/share/wayland-sessions/wrapped_hl.desktop
+echo '
+#
+# ~/.bash_profile
+#
+
+[[ -f ~/.bashrc ]] && . ~/.bashrc
+
+if [[ "$(tty)" == "/dev/tty1" ]]
+then
+   /usr/share/wayland-sessions/wrapped_hl.desktop
+fi
+' > ~/.bash_profile && source ~/.bash_profile
 
 reboot
