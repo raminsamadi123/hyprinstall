@@ -12,7 +12,7 @@ pip install clang-tidy dulwich requests datetime
 
 if [[ "$graphics" =~ ^[nN][vV][iI][dD][iI][aA]$ ]]; then
 sudo pacman -Syu nvidia-dkms nvidia-utils nvidia-settings qt5ct libva
-	paru -S nvidia-vaapi-driver-git
+	paru -Syu nvidia-vaapi-driver-git
 	echo '
     export LIBVA_DRIVER_NAME=nvidia
     export XDG_SESSION_TYPE=wayland
