@@ -54,6 +54,26 @@ sudo pacman -Syu nvidia-dkms nvidia-utils nvidia-settings qt5ct libva
     sudo cp ~/.local/bin/wrappedhl /usr/share/wayland-sessions/wrapped_hl.desktop
 fi
 
+paru -Syu mingetty
+sudo mkdir /etc/systemd/system/getty@tty1.service.d 
+sudo touch override.conf /etc/systemd/system/getty@tty1.service.d/
+sudo sh -c "echo -e '[Service]\nExecStart=\nExecStart=-/sbin/agetty --noissue --autologin $USER %I \$TERM\nType=idle' > /etc/systemd/system/getty@tty1.service.d/override.conf" 
+sudo chmod +x /usr/share/wayland-sessions/wrapped_hl.desktop
+echo '
+#
+# ~/.bash_profile
+#
+
+[[ -f ~/.bashrc ]] && . ~/.bashrc
+
+if [[ "$(tty)" == "/dev/tty1" ]]
+then
+   /usr/share/wayland-sessions/wrapped_hl.desktop
+fi
+' > ~/.bash_profile && source ~/.bash_profile
+systemctl daemon-reload
+systemctl enable --now getty@tty1.service
+
 git clone https://github.com/raminsamadi123/hyprinstall $HOME/Downloads/hyprinstall/
 cd $HOME/Downloads/hyprinstall/
 rsync -avxHAXP --exclude '.git*' .* ~/
@@ -65,3 +85,4 @@ unzip '*.zip' -d $HOME/Downloads/nerdfonts/
 rm -rf *.zip
 sudo cp -R $HOME/Downloads/nerdfonts/ /usr/share/fonts/
 fc-cache -rv
+reboot
