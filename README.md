@@ -1,4 +1,5 @@
 <img src="https://i.imgur.com/zXzvXef.png">
+
 ## Setup
 
 ### This projected was created to make Arch Linux ricing easier for people who don't have much time or for people who don't want to do a lot of scripting. It's simple, lightweight (Runs on 400MB idle on my pc from 2015) and beutiful. Special thanks to [linuxmobile](https://github.com/linuxmobile) and [ChrisTitusTech](https://github.com/christitustech)
