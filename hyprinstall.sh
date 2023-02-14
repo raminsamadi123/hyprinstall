@@ -53,8 +53,6 @@ sudo pacman -Syu nvidia-dkms nvidia-utils nvidia-settings qt5ct libva
 fi
 
 sudo sh -c "echo 'LIBSEAT_BACKEND=logind' >> /etc/environment"
-sudo cp ~/.local/bin/wrappedhl /usr/share/wayland-sessions/wrapped_hl.desktop
-sudo chmod +x /usr/share/wayland-sessions/wrapped_hl.desktop
 git clone https://github.com/raminsamadi123/hyprinstall $HOME/Downloads/hyprinstall/
 cd $HOME/Downloads/hyprinstall/
 rsync -avxHAXP --exclude '.git*' .* ~/
@@ -70,6 +68,7 @@ fc-cache -rv
 sudo mkdir /etc/systemd/system/getty@tty1.service.d 
 sudo touch override.conf /etc/systemd/system/getty@tty1.service.d/
 sudo sh -c "echo -e '[Service]\nExecStart=\nExecStart=-/sbin/agetty --noissue --autologin $USER %I \$TERM\nType=idle' > /etc/systemd/system/getty@tty1.service.d/override.conf" 
+sudo cp ~/.local/bin/wrappedhl /usr/share/wayland-sessions/wrapped_hl.desktop
 sudo chmod +x /usr/share/wayland-sessions/wrapped_hl.desktop
 echo '
 #
