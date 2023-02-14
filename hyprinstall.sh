@@ -81,8 +81,6 @@ then
    /usr/share/wayland-sessions/wrapped_hl.desktop
 fi
 ' > ~/.bash_profile && source ~/.bash_profile
-systemctl daemon-reload
-systemctl enable --now getty@tty1.service
 sudo sh -c "echo -e '[Service]\nExecStart=\nExecStart=-/sbin/agetty --noissue --autologin $USER %I \$TERM\nType=idle' > /etc/systemd/system/getty@tty1.service.d/override.conf" 
 echo '
 #
@@ -97,5 +95,9 @@ then
 fi
 ' > ~/.bash_profile && source ~/.bash_profile
 sudo chmod +x /usr/share/wayland-sessions/wrapped_hl.desktop
+
+systemctl daemon-reload
+systemctl enable --now getty@tty1.service
+source ~/.bash_profile
 
 reboot
