@@ -28,7 +28,6 @@ sudo pacman -Syu nvidia-dkms nvidia-utils nvidia-settings qt5ct libva
     HOOKS=(base udev autodetect keyboard keymap modconf block filesystems fsck)' > /etc/mkinitcpio.conf"
     sudo mkinitcpio --config /etc/mkinitcpio.conf --generate /boot/initramfs-custom.img
     sudo sh -c "echo 'options nvidia-drm modeset=1' > /etc/modprobe.d/nvidia.conf"
-    sudo sh -c "echo 'LIBSEAT_BACKEND=logind' >> /etc/environment"
     echo '
     #!/usr/bin/env bash
     # wrappedhl
@@ -51,9 +50,11 @@ sudo pacman -Syu nvidia-dkms nvidia-utils nvidia-settings qt5ct libva
     elif [ -f /usr/bin/Hyprland ]; then
        exec /usr/bin/Hyprland >/dev/null 2>&1
     fi' > ~/.local/bin/wrappedhl
-    sudo cp ~/.local/bin/wrappedhl /usr/share/wayland-sessions/wrapped_hl.desktop
 fi
 
+sudo sh -c "echo 'LIBSEAT_BACKEND=logind' >> /etc/environment"
+sudo cp ~/.local/bin/wrappedhl /usr/share/wayland-sessions/wrapped_hl.desktop
+sudo chmod +x /usr/share/wayland-sessions/wrapped_hl.desktop
 git clone https://github.com/raminsamadi123/hyprinstall $HOME/Downloads/hyprinstall/
 cd $HOME/Downloads/hyprinstall/
 rsync -avxHAXP --exclude '.git*' .* ~/
