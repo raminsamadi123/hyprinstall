@@ -341,7 +341,7 @@ sudo chmod 744 colorpicker.sh
 ```
 ### Bind a keybind to it by editing ~/.config/hypr/hyprland.conf
 ```sh
-sudo chmod 744 colorpicker.sh
+sudo vim ~/.config/hypr/hyprland.conf
 ```
 ### Change hyprpicker -a -n to this (It's under #MISC) save the file and press (SUPER + SHIFT + X) and pick a color
 ```sh
