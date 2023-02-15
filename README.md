@@ -185,7 +185,7 @@ options root=PARTUUID=a49e02ad-bb32-476d-b200-4812aafcd87f zswap.enabled=0 rw in
 ```
 ### Update your bootctl
 ```sh
-bootctl update
+sudo bootctl update
 ```
 
 </details>
