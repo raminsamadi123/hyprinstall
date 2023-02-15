@@ -15,8 +15,6 @@ window#waybar {
 tooltip {
     background: #2F3136;
     border-radius: 10px;
-    border-width: 2px;
-    border-style: solid;
 }
 
 #workspaces button.active {
