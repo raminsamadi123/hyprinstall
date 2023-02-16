@@ -1,13 +1,11 @@
 <!--------------------------------------------------------TITLE-------------------------------------------------------------------->
 <div align="center">
 
-
-
 # **Hyprinstall**
 <a href="https://archlinux.org/download"><img src="https://img.shields.io/badge/Arch_Linux-1793D1?style=for-the-badge&logo=arch-linux&logoColor=white"/></a>
 <a href="https://github.com/raminsamadi123/hyprinstall/blob/main/LICENSE"><img src="https://img.shields.io/github/license/raminsamadi123/hyprinstall?style=for-the-badge&color=83DA82"/></a>
 <a href="https://github.com/raminsamadi123/hyprinstall/stargazers"><img src="https://img.shields.io/github/stars/raminsamadi123/hyprinstall?style=for-the-badge&color=83DA82"/></a>
-![GitHub Last Commit](https://img.shields.io/github/last-commit/raminsamadi123/hyprinstall?style=for-the-badge&color=83DA82) 
+<a href="https://github.com/raminsamadi123/hyprinstall/commits/main"><img src="https://img.shields.io/github/last-commit/raminsamadi123/hyprinstall?style=for-the-badge&color=83DA82"/></a>
 ![GitHub Repository Size](https://img.shields.io/github/repo-size/raminsamadi123/hyprinstall?style=for-the-badge&color=83DA82)
 </div>
 <!--------------------------------------------------------------------------------------------------------------------------------->
