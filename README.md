@@ -1,3 +1,13 @@
+<div align="center">
+
+# **Hyprinstall**
+
+![GitHub Repo stars](https://img.shields.io/github/stars/raminsamadi123/hyprinstall?style=for-the-badge&color=83DA82) 
+![GitHub last commit](https://img.shields.io/github/last-commit/raminsamadi123/hyprinstall?style=for-the-badge&color=83DA82) 
+![GitHub repo size](https://img.shields.io/github/repo-size/raminsamadi123/hyprinstall?style=for-the-badge&color=83DA82)
+<br/>
+</div>
+
 <img src="https://i.imgur.com/zXzvXef.png">
 
 ## Setup
