@@ -1,13 +1,11 @@
 <!--------------------------------------------------------TITLE-------------------------------------------------------------------->
 <div align="center">
 
+# **Hyprinstall**
 ![Arch Linux](https://img.shields.io/badge/Arch_Linux-1793D1?style=for-the-badge&logo=arch-linux&logoColor=white)
 ![GitHub Repository Stars](https://img.shields.io/github/stars/raminsamadi123/hyprinstall?style=for-the-badge&color=83DA82)
 ![GitHub Last Commit](https://img.shields.io/github/last-commit/raminsamadi123/hyprinstall?style=for-the-badge&color=83DA82) 
 ![GitHub Repository Size](https://img.shields.io/github/repo-size/raminsamadi123/hyprinstall?style=for-the-badge&color=83DA82)
-	
-# **Hyprinstall**
-<br/>
 </div>
 <!--------------------------------------------------------------------------------------------------------------------------------->
 
