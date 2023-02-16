@@ -95,7 +95,7 @@ Under INPUT:
 </details>
 <!--------------------------------------------------------------------------------------------------------------------------------->
 
-<!--------------------------------------------------------Wallpaper---------------------------------------------------------------->
+<!--------------------------------------------------------WALLPAPER---------------------------------------------------------------->
 ## :city_sunset: Wallpaper :city_sunset:
 <details>
 
@@ -118,13 +118,8 @@ sudo vim ~/.config/hypr/hyprpaper.conf
 </details>
 <!--------------------------------------------------------------------------------------------------------------------------------->
 
-
-
 <!--------------------------------------------------------NVIDIA------------------------------------------------------------------->
 ## <a href="#"><img style="width: 30px;" src="https://i.imgur.com/WZoR2bK.png" /></a> NVIDIA <a href="#"><img style="width: 30px;" src="https://i.imgur.com/WZoR2bK.png" /></a>
-
-
-<!--------------------------------------------------------------------------------------------------------------------------------->
 
 <details>
 
@@ -147,9 +142,11 @@ reboot
 ```
 
 </details>
-
+<!--------------------------------------------------------------------------------------------------------------------------------->
+	
+<!--------------------------------------------------------VIRTUAL MACHINE---------------------------------------------------------->
+## <a href="#"><img style="width: 40px;" src="https://i.imgur.com/SMGkUEX.png" /></a> Virtual Machine <a href="#"><img style="width: 40px;" src="https://i.imgur.com/SMGkUEX.png" /></a>
 <details>
-
 <summary><b>Problems in Virtualmachine?</b></summary>
 	
 #### Here's some articles if you really want to run it in a VM. Remeber that you need to enable 3D acceleration.
@@ -171,7 +168,9 @@ https://bbs.archlinux.org/viewtopic.php?id=164391
 https://www.reddit.com/r/hyprland/comments/y5fc5e/how_can_i_wrapping_the_launcher/
 
 </details>
+<!--------------------------------------------------------------------------------------------------------------------------------->
 
+<!--------------------------------------------------------OPTIONAL CONFIGURATION--------------------------------------------------->
 <details>
 
 <summary><b>Configure extra fast boot time</b></summary>
@@ -407,7 +406,9 @@ bind = SUPERSHIFT, X, exec, ~/test/colorpicker.sh
 ```
 
 </details>
+<!--------------------------------------------------------------------------------------------------------------------------------->
 
+<!--------------------------------------------------------CREDIT------------------------------------------------------------------->
 ## Credits
 
 _Beauty community: [r/unixporn](https://www.reddit.com/r/unixporn)._
@@ -427,3 +428,4 @@ _Beauty community: [r/unixporn](https://www.reddit.com/r/unixporn)._
 © [AmitGold](https://github.com/AmitGolden)
 © [linuxmobile](https://github.com/linuxmobile)
 © [ChrisTitusTech](https://github.com/ChrisTitusTech)
+<!--------------------------------------------------------------------------------------------------------------------------------->
