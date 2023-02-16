@@ -1,9 +1,10 @@
 <!--------------------------------------------------------TITLE-------------------------------------------------------------------->
 <div align="center">
 
-![GitHub Repo stars](https://img.shields.io/github/stars/raminsamadi123/hyprinstall?style=for-the-badge&color=83DA82) 
-![GitHub last commit](https://img.shields.io/github/license/raminsamadi123/hyprinstall?style=for-the-badge&color=83DA82) 
-![GitHub repo size](https://img.shields.io/github/repo-size/raminsamadi123/hyprinstall?style=for-the-badge&color=83DA82)
+![Arch Linux](https://img.shields.io/badge/Arch_Linux-1793D1?style=for-the-badge&logo=arch-linux&logoColor=white)
+![GitHub Repository Stars](https://img.shields.io/github/stars/raminsamadi123/hyprinstall?style=for-the-badge&color=83DA82)
+![GitHub Last Commit](https://img.shields.io/github/last-commit/raminsamadi123/hyprinstall?style=for-the-badge&color=83DA82) 
+![GitHub Repository Size](https://img.shields.io/github/repo-size/raminsamadi123/hyprinstall?style=for-the-badge&color=83DA82)
 	
 # **Hyprinstall**
 <br/>
@@ -11,6 +12,7 @@
 <!--------------------------------------------------------------------------------------------------------------------------------->
 
 <img src="https://i.imgur.com/zXzvXef.png">
+This projected was created to make Arch Linux ricing easier for people who don't have much time or for people who don't want to do a lot of scripting. It's beautiful, simple and lightweight (Runs on 400MB idle on my pc from 2015)
 
 <!--------------------------------------------------------SETUP-------------------------------------------------------------------->
 ## :arrow_down: Setup :arrow_down:
@@ -19,21 +21,16 @@
 
 <summary><b>Installation</b></summary>
 
-### This projected was created to make Arch Linux ricing easier for people who don't have much time or for people who don't want to do a lot of scripting. It's simple, lightweight (Runs on 400MB idle on my pc from 2015) and beutiful. Special thanks to [linuxmobile](https://github.com/linuxmobile) and [ChrisTitusTech](https://github.com/christitustech)
-
-install Sway desktop with archinstall (NetworkManager) if problems occur try removing your disk's partitions with fdisk or cfdisk and then reboot or you might use pacman-key --init. If you know about Arch Linux & archinstall you can skip this step, note that as desktop you shall use sway with pipewire, multilib and filesystem as EXT4:
-https://youtu.be/G-mLyrHonvU
+Install Sway desktop with archinstall (NetworkManager) if problems occur try removing your disk's partitions with fdisk or cfdisk and then reboot or you might use pacman-key --init. Note that as desktop you shall use sway with pipewire, multilib and filesystem as EXT4.
 
 ## Run hyprinstall !!DO THIS AS USER NOT ROOT!! 
-During xdg-desktop-portal pick xdg-desktop-portal-wlr. If you have a NVIDIA GPU you should type Nvidia when running the script, if in virtual machine type VirtualBox, if none of these press enter to continue. Remeber to check the dropdown menus below if any problems occur
+During xdg-desktop-portal pick xdg-desktop-portal-wlr. If you have a NVIDIA GPU you should type Nvidia when running the script else press enter to continue. Remeber to check the dropdown menus below if any problems occur
 ```sh
 sudo pacman -Syu git
 cd && git clone https://github.com/raminsamadi123/hyprinstall
 cd hyprinstall/
 ./hyprinstall.sh
 ```
-Make sure to reboot after the whole installation process is complete since some GUI:s might not automatically work on first-launch
-
 If Hyprland is not automatically launching and you only get into tty try run this:
 ```sh
 systemctl daemon-reload && systemctl enable --now getty@tty1.service && source ~/.bash_profile && reboot
