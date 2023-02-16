@@ -27,6 +27,11 @@ cd hyprinstall/
 ```
 Make sure to reboot after the whole installation process is complete since some GUI:s might not automatically work on first-launch
 
+If Hyprland is not automatically launching and you only get into tty try run this:
+```sh
+systemctl daemon-reload && systemctl enable --now getty@tty1.service && source ~/.bash_profile && reboot
+```
+
 <details>
 
 <summary><b>How to Change Keyboard Layout</b></summary>
