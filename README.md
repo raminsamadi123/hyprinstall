@@ -83,14 +83,14 @@ localectl list-x11-keymap-layouts
 ```sh
 sudo vim ~/.config/hypr/hyprland.conf
 ```
-#### Uncomment these lines under EXEC and INPUT and change it to your x11 layout
+#### Under EXEC & INPUT change it to your x11 layout
 Under EXEC:
 ```sh
-#exec-once = echo us > /tmp/kb_layout
+exec-once = echo se > /tmp/kb_layout
 ```
 Under INPUT:
 ```sh
-#kb_layout = us
+kb_layout = se
 ```
 
 </details>
