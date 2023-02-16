@@ -15,6 +15,10 @@
 <!--------------------------------------------------------SETUP-------------------------------------------------------------------->
 ## :arrow_down: Setup :arrow_down:
 
+<details>
+
+<summary><b>Installation</b></summary>
+
 ### This projected was created to make Arch Linux ricing easier for people who don't have much time or for people who don't want to do a lot of scripting. It's simple, lightweight (Runs on 400MB idle on my pc from 2015) and beutiful. Special thanks to [linuxmobile](https://github.com/linuxmobile) and [ChrisTitusTech](https://github.com/christitustech)
 
 install Sway desktop with archinstall (NetworkManager) if problems occur try removing your disk's partitions with fdisk or cfdisk and then reboot or you might use pacman-key --init. If you know about Arch Linux & archinstall you can skip this step, note that as desktop you shall use sway with pipewire, multilib and filesystem as EXT4:
@@ -34,6 +38,8 @@ If Hyprland is not automatically launching and you only get into tty try run thi
 ```sh
 systemctl daemon-reload && systemctl enable --now getty@tty1.service && source ~/.bash_profile && reboot
 ```
+</details>
+
 <!--------------------------------------------------------------------------------------------------------------------------------->
 
 <!--------------------------------------------------------KEYBOARD----------------------------------------------------------------->
@@ -112,8 +118,10 @@ sudo vim ~/.config/hypr/hyprpaper.conf
 </details>
 <!--------------------------------------------------------------------------------------------------------------------------------->
 
+
+
 <!--------------------------------------------------------NVIDIA------------------------------------------------------------------->
-## <img style="width: 30px;" src="https://i.imgur.com/WZoR2bK.png"> NVIDIA <img style="width: 30px;" src="https://i.imgur.com/WZoR2bK.png">
+## <a href="#"><img style="width: 30px;" src="https://i.imgur.com/WZoR2bK.png" /></a> NVIDIA <a href="#"><img style="width: 30px;" src="https://i.imgur.com/WZoR2bK.png" /></a>
 
 
 <!--------------------------------------------------------------------------------------------------------------------------------->
