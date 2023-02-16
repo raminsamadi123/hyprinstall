@@ -1,3 +1,4 @@
+<!--------------------------------------------------------TITLE-------------------------------------------------------------------->
 <div align="center">
 
 # **Hyprinstall**
@@ -7,10 +8,12 @@
 ![GitHub repo size](https://img.shields.io/github/repo-size/raminsamadi123/hyprinstall?style=for-the-badge&color=83DA82)
 <br/>
 </div>
+<!--------------------------------------------------------------------------------------------------------------------------------->
 
 <img src="https://i.imgur.com/zXzvXef.png">
 
-## Setup
+<!--------------------------------------------------------SETUP-------------------------------------------------------------------->
+## :arrow_down: Setup :arrow_down:
 
 ### This projected was created to make Arch Linux ricing easier for people who don't have much time or for people who don't want to do a lot of scripting. It's simple, lightweight (Runs on 400MB idle on my pc from 2015) and beutiful. Special thanks to [linuxmobile](https://github.com/linuxmobile) and [ChrisTitusTech](https://github.com/christitustech)
 
@@ -31,10 +34,34 @@ If Hyprland is not automatically launching and you only get into tty try run thi
 ```sh
 systemctl daemon-reload && systemctl enable --now getty@tty1.service && source ~/.bash_profile && reboot
 ```
+<!--------------------------------------------------------------------------------------------------------------------------------->
+
+<!--------------------------------------------------------KEYBOARD----------------------------------------------------------------->
+## :keyboard: Keyboard :keyboard:
+<details>
+
+<summary><b>Keybind</b></summary>
+
+| Key                                    | Action                                  |
+| -------------------------------------- | --------------------------------------- |
+| <kbd>SUPER                             | App Launcher                            |
+| <kbd>SUPER + Q                         | Quit                                    |
+| <kbd>SUPER + F                         | Fullscreen			           |
+| <kbd>SUPER + Right/Left                | Focus Window		                   |
+| <kbd>SUPER + SHIFT + Right/Left        | Switch Window Position	           |
+| <kbd>SUPER + 1-0                       | Change Workspace                        |
+| <kbd>SUPER + SHIFT + 1-0               | Move Window to Workspace                |
+| <kbd>SUPER + X                         | Power Menu                              |
+| <kbd>SUPER + SHIFT + S                 | Screenshot                              |
+| <kbd>SUPER + T                         | Terminal                                |
+| <kbd>SUPER + E                         | File Manager                            |
+| <kbd>SUPER + L                         | Lock Screen                             |
+
+</details>
 
 <details>
 
-<summary><b>How to Change Keyboard Layout</b></summary>
+<summary><b>Change Keyboard Layout</b></summary>
 
 #### Install Vim or any editor of your choice
 ```sh
@@ -60,10 +87,13 @@ Under INPUT:
 ```
 
 </details>
+<!--------------------------------------------------------------------------------------------------------------------------------->
 
+<!--------------------------------------------------------Wallpaper---------------------------------------------------------------->
+## :city_sunset: Wallpaper :city_sunset:
 <details>
 
-<summary><b>How to Change Wallpaper</b></summary>
+<summary><b>Change Wallpaper</b></summary>
 	
 #### Install Vim or any editor of your choice
 ```sh
@@ -80,8 +110,13 @@ sudo vim ~/.config/hypr/hyprpaper.conf
 ```
 
 </details>
+<!--------------------------------------------------------------------------------------------------------------------------------->
 
-</details>
+<!--------------------------------------------------------NVIDIA------------------------------------------------------------------->
+## <img style="width: 30px;" src="https://i.imgur.com/WZoR2bK.png"> NVIDIA <img style="width: 30px;" src="https://i.imgur.com/WZoR2bK.png">
+
+
+<!--------------------------------------------------------------------------------------------------------------------------------->
 
 <details>
 
