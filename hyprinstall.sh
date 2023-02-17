@@ -5,7 +5,7 @@ read graphics
 
 sudo pacman -Rns foot htop
 
-sudo pacman -Syu base-devel git python-pip unzip rsync intel-ucode amd-ucode bash-completion gvfs linux-headers
+sudo pacman -Syu base-devel git unzip rsync intel-ucode amd-ucode gvfs linux-headers
 
 mkdir Downloads && cd Downloads/ && mkdir _cloned-repos && cd _cloned-repos && git clone https://aur.archlinux.org/paru.git && cd paru/ && makepkg -si
 
