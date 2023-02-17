@@ -160,10 +160,13 @@ sudo pacman -Syu open-vm-tools xf86-input-vmouse xf86-video-vmware
 
 ### You may also want to try this
 ```sh
+sudo pacman -Syu egl-wayland lib32-libva
 sudo sh -c "echo 'LIBSEAT_BACKEND=logind' >> /etc/environment"
+echo '
 export XDG_SESSION_TYPE=wayland
 export LIBSEAT_BACKEND=logind
 export WLR_NO_HARDWARE_CURSORS=1
+export WLR_RENDERER_ALLOW_SOFTWARE=1 Hyprland
 ' >> ~/.bashrc && source ~/.bashrc
 echo '
 #!/usr/bin/env bash
@@ -174,6 +177,7 @@ cd ~
 export _JAVA_AWT_WM_NONREPARENTING=1
 export XCURSOR_SIZE=24
 export MOZ_ENABLE_WAYLAND=1
+export WLR_RENDERER_ALLOW_SOFTWARE=1 Hyprland
 export LIBSEAT_BACKEND=logind
 export WLR_NO_HARDWARE_CURSORS=1
 export QT_QPA_PLATFORM=wayland
