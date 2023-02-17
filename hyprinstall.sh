@@ -9,7 +9,7 @@ sudo pacman -Syu base-devel git python-pip unzip rsync intel-ucode amd-ucode bas
 
 mkdir Downloads && cd Downloads/ && mkdir _cloned-repos && cd _cloned-repos && git clone https://aur.archlinux.org/paru.git && cd paru/ && makepkg -si
 
-paru -Syu hyprland-bin polkit-gnome polkit-kde-agent dunst rofi rofi-emoji wl-clipboard-rs wl-clipboard-x11 wf-recorder wlogout grimblast-git grim slurp zenity mingetty hyprpaper-git xdg-desktop-portal-hyprland-git wtype imagemagick swaylock-effects qt5-wayland qt6-wayland waybar-hyprland-git playerctl pavucontrol starship noise-suppression-for-voice wezterm pamixer wlr-randr wtype noto-fonts-emoji
+paru -Syu hyprland-bin polkit-gnome polkit-kde-agent dunst rofi rofi-emoji wl-clipboard-rs wl-clipboard-x11 wf-recorder wlogout grimblast-git mingetty hyprpaper-git xdg-desktop-portal-hyprland-git wtype imagemagick swaylock-effects qt5-wayland qt6-wayland waybar-hyprland-git playerctl pavucontrol starship noise-suppression-for-voice wezterm pamixer wlr-randr wtype noto-fonts-emoji
 
 if [[ "$graphics" =~ ^[nN][vV][iI][dD][iI][aA]$ ]]; then
 sudo pacman -Syu nvidia-dkms nvidia-utils nvidia-settings qt5ct libva
