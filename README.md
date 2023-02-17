@@ -206,6 +206,17 @@ https://www.reddit.com/r/hyprland/comments/y5fc5e/how_can_i_wrapping_the_launche
 <!--------------------------------------------------------OPTIONAL CONFIGURATION--------------------------------------------------->
 ## :wrench: Optional Configuration :wrench:
 <details>
+
+<summary><b>How to get a working colorpicker?</b></summary>
+Note that I didn't enable this by default during installation in order to make your device more lightweight
+
+### Install dependencies and then press (SUPER + SHIFT + X) and click somewhere to pick the color
+```sh
+sudo pacman -Syu grim slurp zenity
+```
+</details>
+<details>
+
 <summary><b>Silent-boot for systemd-bootctl</b></summary>
 	
 ### Install an editor of your choice
