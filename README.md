@@ -158,6 +158,38 @@ Hyprland
 sudo pacman -Syu open-vm-tools xf86-input-vmouse xf86-video-vmware
 ```
 
+### You may also want to try this
+```sh
+sudo sh -c "echo 'LIBSEAT_BACKEND=logind' >> /etc/environment"
+export XDG_SESSION_TYPE=wayland
+export LIBSEAT_BACKEND=logind
+export WLR_NO_HARDWARE_CURSORS=1
+' >> ~/.bashrc && source ~/.bashrc
+echo '
+#!/usr/bin/env bash
+# wrappedhl
+# Launch Hyprland with a simple wrapper
+cd ~
+# Variables
+export _JAVA_AWT_WM_NONREPARENTING=1
+export XCURSOR_SIZE=24
+export MOZ_ENABLE_WAYLAND=1
+export LIBSEAT_BACKEND=logind
+export WLR_NO_HARDWARE_CURSORS=1
+export QT_QPA_PLATFORM=wayland
+export QT_QPA_PLATFORMTHEME=gtk2
+export SDL_VIDEODRIVER=wayland
+export CLUTTER_BACKEND=wayland  
+exec Hyprland
+# Execute Hyprland
+if [ -f /usr/local/bin/Hyprland ]; then
+	exec /usr/local/bin/Hyprland >/dev/null 2>&1
+elif [ -f /usr/bin/Hyprland ]; then
+	exec /usr/bin/Hyprland >/dev/null 2>&1
+fi' > ~/.local/bin/wrappedhl
+sudo cp ~/.local/bin/wrappedhl /usr/share/wayland-sessions/wrapped_hl.desktop
+```
+
 https://unix.stackexchange.com/questions/656328/libseat-backend-seatd-c70-could-not-connect-to-socket-run-seatd-sock-no-su
 https://github.com/swaywm/sway/issues/5834
 https://ask.fedoraproject.org/t/cant-switch-back-to-x11/19640
