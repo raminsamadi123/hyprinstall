@@ -3,7 +3,7 @@
 echo "What are you using? (Type Nvidia or if none press enter):"
 read graphics
 
-sudo pacman -Rns foot htop swaylock waybar
+sudo pacman -Rns foot htop swaylock waybar dmenu
 
 sudo pacman -Syu base-devel git unzip rsync intel-ucode amd-ucode gvfs linux-headers
 
