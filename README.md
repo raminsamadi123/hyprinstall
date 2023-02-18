@@ -11,7 +11,7 @@
 <!--------------------------------------------------------------------------------------------------------------------------------->
 
 <img src="https://i.imgur.com/zXzvXef.png">
-This projected was created to make Arch Linux ricing easier for people who don't have much time or for people who don't want to do a lot of scripting. It's beautiful, simple and lightweight (Runs on 400MB idle on my pc from 2015)
+This project was created to make Arch Linux ricing easier for people who don't have much time or for people who don't want to do a lot of scripting. It's beautiful, simple and lightweight (Runs on 400MB idle on my pc from 2015)
 
 <!--------------------------------------------------------SETUP-------------------------------------------------------------------->
 ## :arrow_down: Setup :arrow_down:
