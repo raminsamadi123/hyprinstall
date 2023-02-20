@@ -59,7 +59,7 @@ systemctl daemon-reload && systemctl enable --now getty@tty1.service && source ~
 | <kbd>SUPER + T                         | Terminal                                |
 | <kbd>SUPER + E                         | File Manager (Install Thunar)           |
 | <kbd>SUPER + L                         | Lock Screen                             |
-
+| <kbd>SUPER + Mouse left button + Drag  | Drag Window                             |
 </details>
 
 <details>
