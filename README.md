@@ -47,7 +47,7 @@ systemctl daemon-reload && systemctl enable --now getty@tty1.service && source ~
 | Key                                    | Action                                  |
 | -------------------------------------- | --------------------------------------- |
 | <kbd>SUPER                             | App Launcher                            |
-| <kbd>SUPER + .                         | Emoji picker                            |
+| <kbd>SUPER + .                         | Emoji                                   |
 | <kbd>SUPER + Q                         | Quit                                    |
 | <kbd>SUPER + F                         | Fullscreen			           |
 | <kbd>SUPER + Right/Left                | Focus Window		                   |
