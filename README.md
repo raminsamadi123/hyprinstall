@@ -27,7 +27,7 @@ During xdg-desktop-portal pick xdg-desktop-portal-wlr. If you have a NVIDIA GPU 
 ```sh
 sudo pacman -Syu git
 cd && git clone https://github.com/raminsamadi123/hyprinstall
-cd hyprinstall/
+cd ~/hyprinstall/
 ./hyprinstall.sh
 ```
 If Hyprland is not automatically launching and you only get into tty try run this:
@@ -88,6 +88,47 @@ Under INPUT:
 ```sh
 kb_layout = se
 ```
+
+</details>
+<!--------------------------------------------------------------------------------------------------------------------------------->
+
+<!--------------------------------------------------------Monitor------------------------------------------------------------------>
+## :desktop_computer: Monitor :desktop_computer:
+<details>
+
+<summary><b>Change Monitor Position/Resolution/Refresh Rate</b></summary>
+
+#### Install Vim or any editor of your choice
+```sh
+sudo pacman -Syu vim
+```
+#### Find your monitors output (It should look something like this if you use Display Port DP-1. For HDMI it's something else)
+```sh
+wl-randr
+```
+#### Edit Hyprland Configuration file
+```sh
+sudo vim ~/.config/hypr/hyprland.conf
+```
+#### Under MONITOR change monitor=,preferred,auto,1 to your preference
+```sh
+monitor=,preferred,auto,1
+```
+#### Here are some examples (Thanks to [SinisterSpatula](https://github.com/SinisterSpatula)) :
+```sh
+#monitor=name, resolution, position, scale
+monitor=DP-5, 2560x1440, 1920x0, 1.25
+monitor=DP-6, 1920x1080, 0x0, 1
+```
+For highest resolution:
+```sh
+monitor=,highres,auto,1
+```
+For highest refresh rate:
+```sh
+monitor=,highrr,auto,1
+```
+For more specific information visit https://wiki.hyprland.org/Configuring/Monitors/ 
 
 </details>
 <!--------------------------------------------------------------------------------------------------------------------------------->
