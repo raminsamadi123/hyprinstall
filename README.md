@@ -55,9 +55,9 @@ systemctl daemon-reload && systemctl enable --now getty@tty1.service && source ~
 | <kbd>SUPER + SHIFT + 1-0               | Move Window to Workspace                |
 | <kbd>SUPER + X                         | Power Menu                              |
 | <kbd>SUPER + SHIFT + S                 | Screenshot                              |
-| <kbd>SUPER + SHIFT + X                 | Colorpicker                             |
+| <kbd>SUPER + SHIFT + X                 | Colorpicker (Install grim slurp zenity) |
 | <kbd>SUPER + T                         | Terminal                                |
-| <kbd>SUPER + E                         | File Manager                            |
+| <kbd>SUPER + E                         | File Manager (Install Thunar)           |
 | <kbd>SUPER + L                         | Lock Screen                             |
 
 </details>
