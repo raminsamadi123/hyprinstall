@@ -197,7 +197,7 @@ Hyprland
 
 ### If you are on VMware install these
 ```sh
-sudo pacman -Syu open-vm-tools xf86-input-vmouse xf86-video-vmware
+sudo pacman -Syu open-vm-tools xf86-input-vmmouse xf86-video-vmware
 ```
 
 ### You may also want to try this
